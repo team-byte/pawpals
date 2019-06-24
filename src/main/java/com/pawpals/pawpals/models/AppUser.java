@@ -8,10 +8,10 @@ import java.util.Collection;
 import java.util.List;
 
 @Entity
-public class User implements Reviewables, UserDetails {
+public class AppUser implements UserDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
 
     @Column(unique = true)
@@ -24,16 +24,19 @@ public class User implements Reviewables, UserDetails {
     String password;
     String phoneNumber;
     int rating;
-    @OneToMany
+
+    @OneToMany (mappedBy = "owner")
     List<Pet> petList;
-    @OneToMany (mappedBy = "reviewSubject")
-    List<Review> reviewListAboutMe;
+
+//    @OneToMany (mappedBy = "reviewSubject")
+//    List<Review> reviewListAboutMe;
+
     @OneToMany (mappedBy = "author")
     List<Review> reviewsListAuthored;
 
-    public User() {}
+    public AppUser() {}
 
-    public User(String username, String firstName, String lastName, String password, String phoneNumber) {
+    public AppUser(String username, String firstName, String lastName, String password, String phoneNumber) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -104,17 +107,17 @@ public class User implements Reviewables, UserDetails {
         return phoneNumber;
     }
 
-    public List<Pet> getPetList() {
-        return petList;
-    }
+//    public List<Pet> getPetList() {
+////        return petList;
+//    }
 
-    public List<Review> getReviewListAboutMe() {
-        return reviewListAboutMe;
-    }
+//    public List<Review> getReviewListAboutMe() {
+//        return reviewListAboutMe;
+//    }
 
-    public List<Review> getReviewsListAuthored() {
-        return reviewsListAuthored;
-    }
+//    public List<Review> getReviewsListAuthored() {
+////        return reviewsListAuthored;
+//    }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -140,9 +143,9 @@ public class User implements Reviewables, UserDetails {
         this.phoneNumber = phoneNumber;
     }
 
-    public void setPetList(List<Pet> petList) {
-        this.petList = petList;
-    }
+//    public void setPetList(List<Pet> petList) {
+//        this.petList = petList;
+//    }
 
     public int getRating() {
         return rating;
@@ -152,18 +155,35 @@ public class User implements Reviewables, UserDetails {
         this.rating = rating;
     }
 
-    @Override
     public void addReview(Review review) {
 
     }
 
-    @Override
     public void removeReview(Review review) {
 
     }
 
-    @Override
     public int getAverage(Review review) {
         return 0;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public List<Pet> getPetList() {
+        return petList;
+    }
+
+    public void setPetList(List<Pet> petList) {
+        this.petList = petList;
+    }
+
+    public List<Review> getReviewsListAuthored() {
+        return reviewsListAuthored;
+    }
+
+    public void setReviewsListAuthored(List<Review> reviewsListAuthored) {
+        this.reviewsListAuthored = reviewsListAuthored;
     }
 }

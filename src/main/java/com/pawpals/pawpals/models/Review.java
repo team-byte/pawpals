@@ -8,25 +8,51 @@ import java.util.Date;
 public class Review {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
 
     int rating;
     String body;
+
     @ManyToOne
-    User author;
+    AppUser author;
+
     Date createdOn;
-    @ManyToOne
-    Reviewables reviewSubject;
 
-    Review() {}
+//    @ManyToOne
+//    Reviewable reviewSubject;
 
-    public Review(int rating, String body, User author, Reviewables reviewSubject) {
-        this.rating = rating;
-        this.body = body;
-        this.author = author;
-        this.reviewSubject = reviewSubject;
-    }
+
+//    public Review() {}
+
+//    public class PetReview extends Review{
+//      @ManyToOne
+//      Pet reviewSubject;
+//
+//      public PetReview() {}
+//
+//        public PetReview(int rating, String body, AppUser author, Pet reviewSubject) {
+//            this.rating = rating;
+//            this.body = body;
+//            this.author = author;
+//            this.reviewSubject = reviewSubject;
+//        }
+//    }
+
+//    public class UserReview extends Review {
+//        @ManyToOne
+//        AppUser reviewSubject;
+
+        public Review() {}
+
+        public Review(int rating, String body, AppUser author, AppUser reviewSubject) {
+            this.rating = rating;
+            this.body = body;
+            this.author = author;
+//            this.reviewSubject = reviewSubject;
+        }
+//    }
+
 
     public long getId() {
         return id;
@@ -40,7 +66,7 @@ public class Review {
         return body;
     }
 
-    public User getAuthor() {
+    public AppUser getAuthor() {
         return author;
     }
 
@@ -48,9 +74,24 @@ public class Review {
         return createdOn;
     }
 
-    public Reviewables getReviewSubject() {
-        return reviewSubject;
+//    public Reviewable getReviewSubject() {
+//        return reviewSubject;
+//    }
+
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 
+    public void setBody(String body) {
+        this.body = body;
+    }
 
+    public void setAuthor(AppUser author) {
+        this.author = author;
+    }
+
+    public void setCreatedOn(Date createdOn) {
+        this.createdOn = createdOn;
+    }
 }

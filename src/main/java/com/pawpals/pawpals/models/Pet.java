@@ -2,13 +2,12 @@ package com.pawpals.pawpals.models;
 
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-public class Pet implements Reviewables {
+public class Pet {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
 
     String name;
@@ -22,14 +21,14 @@ public class Pet implements Reviewables {
     int rating;
 
     @ManyToOne
-    User owner;
+    AppUser owner;
 
-    @OneToMany (mappedBy = "reviewSubject")
-    List<Review> reviewListAboutMe;
+//    @OneToMany (mappedBy = "reviewSubject")
+//    List<Review> reviewListAboutMe;
 
-    Pet() {}
+    public Pet() {}
 
-    public Pet(String name, String species, String breed, int age, String bio, int activity, String size, String imgUrl, int rating, User owner) {
+    public Pet(String name, String species, String breed, int age, String bio, int activity, String size, String imgUrl, int rating, AppUser owner) {
         this.name = name;
         this.species = species;
         this.breed = breed;
@@ -39,7 +38,7 @@ public class Pet implements Reviewables {
         this.size = size;
         this.imgUrl = imgUrl;
         this.rating = rating;
-        this.owner = owner;
+//        this.owner = owner;
     }
 
     public long getId() {
@@ -82,13 +81,13 @@ public class Pet implements Reviewables {
         return rating;
     }
 
-    public User getOwner() {
-        return owner;
-    }
+//    public AppUser getOwner() {
+//        return owner;
+//    }
 
-    public List<Review> getReviewListAboutMe() {
-        return reviewListAboutMe;
-    }
+//    public List<Review> getReviewListAboutMe() {
+//        return reviewListAboutMe;
+//    }
 
     public void setName(String name) {
         this.name = name;
@@ -126,21 +125,17 @@ public class Pet implements Reviewables {
         this.rating = rating;
     }
 
-    public void setOwner(User owner) {
-        this.owner = owner;
-    }
+//    public void setOwner(AppUser owner) {
+//        this.owner = owner;
+//    }
 
-    @Override
     public void addReview(Review review) {
-
     }
 
-    @Override
     public void removeReview(Review review) {
 
     }
 
-    @Override
     public int getAverage(Review review) {
         return 0;
     }
