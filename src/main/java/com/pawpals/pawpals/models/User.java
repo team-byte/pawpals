@@ -20,14 +20,15 @@ public class User implements Reviewables, UserDetails {
     String lastName;
     int activity;
     String bio;
-    String image;
+    String imgUrl;
     String password;
     String phoneNumber;
+    int rating;
     @OneToMany
     List<Pet> petList;
-    @OneToMany
+    @OneToMany (mappedBy = "reviewSubject")
     List<Review> reviewListAboutMe;
-    @OneToMany
+    @OneToMany (mappedBy = "author")
     List<Review> reviewsListAuthored;
 
     public User() {}
@@ -95,8 +96,8 @@ public class User implements Reviewables, UserDetails {
         return bio;
     }
 
-    public String getImage() {
-        return image;
+    public String getImgUrl() {
+        return imgUrl;
     }
 
     public String getPhoneNumber() {
@@ -115,5 +116,54 @@ public class User implements Reviewables, UserDetails {
         return reviewsListAuthored;
     }
 
-    
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setActivity(int activity) {
+        this.activity = activity;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setPetList(List<Pet> petList) {
+        this.petList = petList;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    @Override
+    public void addReview(Review review) {
+
+    }
+
+    @Override
+    public void removeReview(Review review) {
+
+    }
+
+    @Override
+    public int getAverage(Review review) {
+        return 0;
+    }
 }
