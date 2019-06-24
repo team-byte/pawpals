@@ -22,14 +22,14 @@ public class Pet implements Reviewables {
     int rating;
 
     @ManyToOne
-    User owner;
+    AppUser owner;
 
     @OneToMany (mappedBy = "reviewSubject")
     List<Review> reviewListAboutMe;
 
     Pet() {}
 
-    public Pet(String name, String species, String breed, int age, String bio, int activity, String size, String imgUrl, int rating, User owner) {
+    public Pet(String name, String species, String breed, int age, String bio, int activity, String size, String imgUrl, int rating, AppUser owner) {
         this.name = name;
         this.species = species;
         this.breed = breed;
@@ -82,7 +82,7 @@ public class Pet implements Reviewables {
         return rating;
     }
 
-    public User getOwner() {
+    public AppUser getOwner() {
         return owner;
     }
 
@@ -126,7 +126,7 @@ public class Pet implements Reviewables {
         this.rating = rating;
     }
 
-    public void setOwner(User owner) {
+    public void setOwner(AppUser owner) {
         this.owner = owner;
     }
 

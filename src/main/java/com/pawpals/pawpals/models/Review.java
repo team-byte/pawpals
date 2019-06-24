@@ -14,14 +14,14 @@ public class Review {
     int rating;
     String body;
     @ManyToOne
-    User author;
+    AppUser author;
     Date createdOn;
     @ManyToOne
     Reviewables reviewSubject;
 
     Review() {}
 
-    public Review(int rating, String body, User author, Reviewables reviewSubject) {
+    public Review(int rating, String body, AppUser author, Reviewables reviewSubject) {
         this.rating = rating;
         this.body = body;
         this.author = author;
@@ -40,7 +40,7 @@ public class Review {
         return body;
     }
 
-    public User getAuthor() {
+    public AppUser getAuthor() {
         return author;
     }
 

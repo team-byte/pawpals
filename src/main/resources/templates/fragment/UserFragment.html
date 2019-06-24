@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<ul th:fragment= "appUserFragment(appUser)" >
+    <li> <img th:src="@{${appUser.imgUrl}}"/></li>
+    <li> <span th:text="${appUser.username}"></span></li>
+    <li> <span th:text="${appUser.bio}"></span></li>
+    <li> <span th:text="${appUser.rating}"></span></li>
+    <li> Pet detail list</li>
+</ul>

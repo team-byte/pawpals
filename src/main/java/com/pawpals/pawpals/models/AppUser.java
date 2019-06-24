@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Entity
-public class User implements Reviewables, UserDetails {
+public class AppUser implements Reviewables, UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,8 +16,29 @@ public class User implements Reviewables, UserDetails {
 
     @Column(unique = true)
     String username;
-    String firstName;
-    String lastName;
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setReviewListAboutMe(List<Review> reviewListAboutMe) {
+        this.reviewListAboutMe = reviewListAboutMe;
+    }
+
+    public void setReviewsListAuthored(List<Review> reviewsListAuthored) {
+        this.reviewsListAuthored = reviewsListAuthored;
+    }
+
+    String firstname;
+    String lastname;
     int activity;
     String bio;
     String imgUrl;
@@ -31,12 +52,12 @@ public class User implements Reviewables, UserDetails {
     @OneToMany (mappedBy = "author")
     List<Review> reviewsListAuthored;
 
-    public User() {}
+    public AppUser() {}
 
-    public User(String username, String firstName, String lastName, String password, String phoneNumber) {
+    public AppUser(String username, String firstName, String lastName, String password, String phoneNumber) {
         this.username = username;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstname = firstName;
+        this.lastname = lastName;
         this.password = password;
         this.phoneNumber = phoneNumber;
     }
@@ -80,12 +101,12 @@ public class User implements Reviewables, UserDetails {
         return id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
     public int getActivity() {
@@ -116,12 +137,12 @@ public class User implements Reviewables, UserDetails {
         return reviewsListAuthored;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public void setActivity(int activity) {
