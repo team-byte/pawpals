@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.springframework.org/schema/security">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <ul th:fragment= "petsList(pets)" th:each="pet : ${pets}" >
+
+<div class="petList" th:fragment= "petList" >
+<ul th:each="pet : ${petList}" >
         <li> <img th:src="@{${pet.imgUrl}}"/></li>
         <li> <span th:text="${pet.name}"></span></li>
         <li> <span th:text="${pet.owner.username}"></span></li>
@@ -15,6 +10,5 @@
         <li> <span th:text="${pet.rating}"></span></li>
         <li> <span th:text="${pet.activity}"></span></li>
         <li> <span th:text="${pet.bio}"></span></li>
-    </ul>
-</body>
-</html>
+</ul>
+</div>
