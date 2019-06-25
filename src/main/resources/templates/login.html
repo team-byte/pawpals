@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paw Pals</title>
 </head>
 <body>
-
+    <div class="imgcarousel"></div>
+    <div class="loginbox">
+        <div th:if="${p == null}" class="loginform">
+            <h1>Log in</h1>
+            <form action="/login" method="POST">
+                <label for="username">Username: </label><input name="username" id="username" />
+                <label for="password">Password: </label><input name="password" id="password" />
+                <input type="submit" />
+            </form>
+        </div>
+        <div th:if="${p != null}" class="greeting">
+            <p>Welcome [[${p.name}]]</p>
+            <p><a th:href="@{/profile}">Go to your profile</a></p>
+            <p><a th:href="@{/logout}">Logout!</a></p>
+        </div>
+        <div th:if="${p == null}" class="greeting">
+            <p><a th:href="@{/signup}">Not a member? Sign up here!</a></p>
+        </div>
+    </div>
 </body>
 </html>
