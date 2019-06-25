@@ -17,41 +17,53 @@ public class Review {
     @ManyToOne
     AppUser author;
 
-    Date createdOn;
+    private Date createdOn;
 
-//    @ManyToOne
-//    Reviewable reviewSubject;
+    @Entity
+    public class PetReview extends Review{
+      @ManyToOne
+      Pet petReviewSubject;
 
+      public PetReview() {}
 
-//    public Review() {}
-
-//    public class PetReview extends Review{
-//      @ManyToOne
-//      Pet reviewSubject;
-//
-//      public PetReview() {}
-//
-//        public PetReview(int rating, String body, AppUser author, Pet reviewSubject) {
-//            this.rating = rating;
-//            this.body = body;
-//            this.author = author;
-//            this.reviewSubject = reviewSubject;
-//        }
-//    }
-
-//    public class UserReview extends Review {
-//        @ManyToOne
-//        AppUser reviewSubject;
-
-        public Review() {}
-
-        public Review(int rating, String body, AppUser author, AppUser reviewSubject) {
+        public PetReview(int rating, String body, AppUser author, Pet petReviewSubject) {
             this.rating = rating;
             this.body = body;
             this.author = author;
-//            this.reviewSubject = reviewSubject;
+            this.petReviewSubject = petReviewSubject;
         }
-//    }
+
+        public Pet getPetReviewSubject() {
+            return petReviewSubject;
+        }
+
+        public void setPetReviewSubject(Pet petReviewSubject) {
+            this.petReviewSubject = petReviewSubject;
+        }
+    }
+
+    @Entity
+    public class UserReview extends Review {
+        @ManyToOne
+        AppUser userReviewSubject;
+
+        public UserReview() {}
+
+        public UserReview(int rating, String body, AppUser author, AppUser petReviewSubject) {
+            this.rating = rating;
+            this.body = body;
+            this.author = author;
+            this.userReviewSubject = petReviewSubject;
+        }
+
+        public AppUser getUserReviewSubject() {
+            return userReviewSubject;
+        }
+
+        public void setUserReviewSubject(AppUser userReviewSubject) {
+            this.userReviewSubject = userReviewSubject;
+        }
+    }
 
 
     public long getId() {
@@ -73,11 +85,6 @@ public class Review {
     public Date getCreatedOn() {
         return createdOn;
     }
-
-//    public Reviewable getReviewSubject() {
-//        return reviewSubject;
-//    }
-
 
     public void setRating(int rating) {
         this.rating = rating;

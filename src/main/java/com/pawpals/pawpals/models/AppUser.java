@@ -28,8 +28,8 @@ public class AppUser implements UserDetails {
     @OneToMany (mappedBy = "owner")
     List<Pet> petList;
 
-//    @OneToMany (mappedBy = "reviewSubject")
-//    List<Review> reviewListAboutMe;
+    @OneToMany (mappedBy = "userReviewSubject")
+    List<Review.UserReview> reviewListAboutMe;
 
     @OneToMany (mappedBy = "author")
     List<Review> reviewsListAuthored;
@@ -107,17 +107,13 @@ public class AppUser implements UserDetails {
         return phoneNumber;
     }
 
-//    public List<Pet> getPetList() {
-////        return petList;
-//    }
+    public List<Pet> getPetList() {
+        return petList;
+    }
 
-//    public List<Review> getReviewListAboutMe() {
-//        return reviewListAboutMe;
-//    }
-
-//    public List<Review> getReviewsListAuthored() {
-////        return reviewsListAuthored;
-//    }
+    public List<Review.UserReview> getReviewListAboutMe() {
+        return reviewListAboutMe;
+    }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -143,10 +139,6 @@ public class AppUser implements UserDetails {
         this.phoneNumber = phoneNumber;
     }
 
-//    public void setPetList(List<Pet> petList) {
-//        this.petList = petList;
-//    }
-
     public int getRating() {
         return rating;
     }
@@ -169,10 +161,6 @@ public class AppUser implements UserDetails {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public List<Pet> getPetList() {
-        return petList;
     }
 
     public void setPetList(List<Pet> petList) {
