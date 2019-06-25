@@ -8,10 +8,13 @@
 <body>
     <div th:replace="fragment/UserFragment::userprofile"></div>
     <div class="scheduler">
-        <p>Current Schedule</p>
+        <p>My Current Schedule</p>
     </div>
     <div>
-        <p>Pet List:</p>
+        <p>My Pet List:</p>
+        <div th:if="${#lists.isEmpty(user.petList)}">
+            <p>You have no animal friends</p>
+        </div>
         <ul>
             <li th:each="pet: ${user.petList}">
                 <img th:src="${pet.imgUrl}" alt="petavatar" class="petavatar" /> <span th:text="${pet.name}"></span>
@@ -19,7 +22,10 @@
         </ul>
     </div>
     <div>
-        <p>Reviews About the User:</p>
+        <p>Reviews About Me:</p>
+        <div th:if="${#lists.isEmpty(user.reviewListAboutMe)}">
+            <p>No reviews about you. Go on play dates!</p>
+        </div>
         <ul>
             <li th:each="review: ${user.reviewListAboutMe}">
                 <p th:text="${review.rating}"></p>
@@ -28,8 +34,19 @@
             </li>
         </ul>
     </div>
-    <div class="reviewsaboutuser"></div>
-    <div class="reviewsbyuser"></div>
+    <div>
+        <p>Reviews By You:</p>
+        <div th:if="${#lists.isEmpty(user.reviewsListAuthored)}">
+            <p>You haven't done any reviews!</p>
+        </div>
+        <ul>
+            <li th:each="review: ${user.reviewsListAuthored}">
+                <p th:text="${review.rating}"></p>
+                <p th:text="${review.body}"></p>
+                <p th:text="${review.author}"></p>
+            </li>
+        </ul>
+    </div>
 <!--    <div th:replace="fragment/addReview::addReview"></div>-->
 </body>
 </html>
