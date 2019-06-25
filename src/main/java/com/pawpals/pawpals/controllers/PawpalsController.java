@@ -20,9 +20,11 @@ public class PawpalsController {
 
     @GetMapping(value = {"/", "login"})
     public String getHome(Principal p, Model m) {
-        AppUser user = appUserRepository.findByUsername(p.getName());
+        if (p != null) {
+            AppUser user = appUserRepository.findByUsername(p.getName());
+            m.addAttribute("user", user);
+        }
         m.addAttribute("p", p);
-        m.addAttribute("user", user);
         return "login";
     }
 
