@@ -3,7 +3,6 @@ package com.pawpals.pawpals.controllers;
 import com.pawpals.pawpals.models.AppUser;
 import com.pawpals.pawpals.models.AppUserRepository;
 import com.pawpals.pawpals.models.PetRepository;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
