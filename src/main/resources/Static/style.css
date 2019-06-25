@@ -42,6 +42,7 @@ input[type="checkbox"] {
   position: relative;
   width: 64px;
 }
+
 input[type="checkbox"]:checked {
   left: 29px;
   width: 58px;
