@@ -1,5 +1,5 @@
 <span th:fragment="addReview" xmlns:th="http://www.thymeleaf.org">
-    <form th:action="'/' + ${target.type} + '/' + ${target.id} + '/review'" method="POST">
+    <form th:action="'/' + ${type} + '/' + ${target.id} + '/review'" method="POST">
         <!-- target.type should be passed in as "users" or "pets" -->
         <!-- target.id should be passed in as the ID of the target user or pet.       -->
 
