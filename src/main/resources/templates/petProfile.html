@@ -5,8 +5,21 @@
     <title>Paw Pals Pets</title>
 </head>
 <body>
-<h2>Welcome <span th:text="${user.username}"> here are your pets. </span></h2>
-<div th:replace="fragment/PetFragment ::  petList"></div>
-<div th:replace="fragment/ReviewFragment :: addReview"></div>
+<!--<h2>Welcome <span th:text="${target.owner.name}">! </span></h2>-->
+<div>
+    <ul>
+        <li> <img th:src="@{${target.imgUrl}}"/></li>
+        <li> <span th:text="${target.name}"></span></li>
+        <li> <span th:text="${target.owner.username}"></span></li>
+        <li> <span th:text="${target.species}"></span></li>
+        <li> <span th:text="${target.breed}"></span></li>
+        <li> <span th:text="${target.age}"></span></li>
+        <li> <span th:text="${target.rating}"></span></li>
+        <li> <span th:text="${target.activity}"></span></li>
+        <li> <span th:text="${target.bio}"></span></li>
+        <li> <a th:href="@{'/delete/' + ${target.id}}">Delete</a> </li>
+    </ul>
+    <div th:replace="fragment/ReviewFragment::addReview">
+</div>
 </body>
 </html>

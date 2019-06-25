@@ -1,6 +1,6 @@
 
-<div class="petList" th:fragment= "petList" >
-<ul th:each="pet : ${petList}" >
+<div>
+<ul>
         <li> <img th:src="@{${pet.imgUrl}}"/></li>
         <li> <span th:text="${pet.name}"></span></li>
         <li> <span th:text="${pet.owner.username}"></span></li>
@@ -10,5 +10,6 @@
         <li> <span th:text="${pet.rating}"></span></li>
         <li> <span th:text="${pet.activity}"></span></li>
         <li> <span th:text="${pet.bio}"></span></li>
+    <li> <a th:href="@{'/pets/' + pet.id}"></a> </li>
 </ul>
 </div>
