@@ -29,7 +29,7 @@ public class Pet {
 
     public Pet() {}
 
-    public Pet(String name, String species, String breed, int age, String bio, int activity, String size, String imgUrl, int rating, AppUser owner) {
+    public Pet(String name, String species, String breed, String bio, int age, int activity, String size, String imgUrl, AppUser owner) {
         this.name = name;
         this.species = species;
         this.breed = breed;
@@ -38,7 +38,6 @@ public class Pet {
         this.activity = activity;
         this.size = size;
         this.imgUrl = imgUrl;
-        this.rating = rating;
         this.owner = owner;
     }
 
