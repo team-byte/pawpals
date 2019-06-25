@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Paw Pals Pets</title>
 </head>
 <body>
+<h2>Welcome <span th:text="${user.username}"> here are your pets. </span></h2>
 
+<div th:replace="fragment/PetFragment ::  petList"></div>
 </body>
 </html>
