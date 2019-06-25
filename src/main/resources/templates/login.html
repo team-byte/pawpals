@@ -20,7 +20,7 @@
         </div>
         <div th:if="${p != null}" class="greeting">
             <p>Welcome [[${p.name}]]</p>
-            <p><a th:href="@{/profile}">Go to your profile</a></p>
+            <p><a th:href="@{/myprofile}">Go to your profile</a></p>
             <p><a th:href="@{/logout}">Logout!</a></p>
         </div>
         <div th:if="${p == null}" class="greeting">
