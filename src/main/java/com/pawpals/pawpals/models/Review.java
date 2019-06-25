@@ -49,11 +49,11 @@ public class Review {
 
         public UserReview() {}
 
-        public UserReview(int rating, String body, AppUser author, AppUser petReviewSubject) {
+        public UserReview(int rating, String body, AppUser author, AppUser userReviewSubject) {
             this.rating = rating;
             this.body = body;
             this.author = author;
-            this.userReviewSubject = petReviewSubject;
+            this.userReviewSubject = userReviewSubject;
         }
 
         public AppUser getUserReviewSubject() {
