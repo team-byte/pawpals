@@ -5,12 +5,19 @@
     <title>Title</title>
 </head>
 <body>
-    <ul th:fragment= "appUserFragment(appUser)" >
-        <li> <img th:src="@{${appUser.imgUrl}}"/></li>
-        <li> <span th:text="${appUser.username}"></span></li>
-        <li> <span th:text="${appUser.bio}"></span></li>
-        <li> <span th:text="${appUser.rating}"></span></li>
-        <li> Pet detail list</li>
-    </ul>
+    <div th:fragment="userprofile" class="userinfo" >
+        <div class="useravatarplaceholder">
+            <img th:src="${user.imgUrl}" alt="useravatar" class="useravatar" />
+        </div>
+        <div class="userinfo">
+            <p>User Name: <span th:text="${user.username}"></span></p>
+            <p>First Name: <span th:text="${user.firstName}"></span></p>
+            <p>Last Name: <span th:text="${user.lastName}"></span></p>
+            <p>Phone Number: <span th:text="${user.phoneNumber}"></span></p>
+            <p>Activity Level: <span th:text="${user.activity}"></span></p>
+            <p>Rating: <span th:text="${user.rating}"></span></p>
+            <p>Biography: <span th:text="${user.bio}"></span></p>
+        </div>
+    </div>
 </body>
 </html>
