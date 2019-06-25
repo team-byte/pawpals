@@ -55,6 +55,19 @@ public class UserController {
         AppUser user = appUserRepository.findByUsername(p.getName());
         m.addAttribute("p", p);
         m.addAttribute("user", user);
+        m.addAttribute("target", user);
         return "myProfile";
+    }
+
+    @GetMapping("/users")
+    public String getUsers(Principal p, Model m) {
+        Iterable<AppUser> usersIterable = appUserRepository.findAll();
+        ArrayList<AppUser> users = new ArrayList<>();
+        for (AppUser user: usersIterable) {
+            if (!user.equals(appUserRepository.findByUsername(p.getName())))
+                users.add(user);
+        }
+        m.addAttribute("users", users);
+        return "usersList";
     }
 }
