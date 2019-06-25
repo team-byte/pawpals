@@ -9,7 +9,7 @@
     <h1>List of all Paw Pal Users:</h1>
     <ul>
         <li th:each="user: ${users}">
-            <a th:href="@{'/users/' + user.id}"><img th:src="${user.imgUrl}" alt="useravatar" class="useravatar" /> <span th:text="${user.username}"></span></a>
+            <a th:href="@{'/users/' + ${user.id}}"><img th:src="${user.imgUrl}" alt="useravatar" class="useravatar" /> <span th:text="${user.username}"></span></a>
         </li>
     </ul>
 </body>
