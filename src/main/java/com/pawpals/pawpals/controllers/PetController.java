@@ -40,18 +40,17 @@ public class PetController {
         return new RedirectView("/myProfile");
     }
 
-    @GetMapping("/petprofile")
-    public String petProfile(Principal p, Model m) {
-        AppUser user = appUserRepository.findByUsername(p.getName());
-        List<Pet> petList = user.getPetList();
-        m.addAttribute("petList", petList);
-        m.addAttribute("user", user);
-        return "petProfile";
-    }
-
     @GetMapping("delete/{id}")
     public RedirectView deletePet(Principal p, Model m, @PathVariable("id") long id) {
         petRepository.deleteById(id);
         return new RedirectView("/petprofile");
+    }
+
+    @GetMapping("/pets/{id}")
+    public String singlePetProfile(@PathVariable Long id, Principal p, Model m) {
+        Pet targetPet = petRepository.findById(id).get();
+        m.addAttribute("target", targetPet);
+        m.addAttribute("type", "pets");
+        return "petProfile";
     }
 }
