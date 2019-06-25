@@ -1,5 +1,5 @@
 <span th:fragment="addReview" xmlns:th="http://www.thymeleaf.org">
-    <form action="/registernewpet" method="POST">
+    <form action="/writenewreview" method="POST">
 
         <!--  NOTE: USER AND PET PROFILE /GET MAPPINGS SHOULD PASS IN THE USER/PET'S ID AS PART OF THE MODEL.   -->
         <label for="target"></label> <input th:value="${target.id}" name="target" id="target" style="display:none" />
