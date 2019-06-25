@@ -3,7 +3,6 @@ package com.pawpals.pawpals.controllers;
 import com.pawpals.pawpals.models.AppUser;
 import com.pawpals.pawpals.models.AppUserRepository;
 import com.pawpals.pawpals.models.PetRepository;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -42,8 +41,9 @@ public class UserController {
                                       @RequestParam String password,
                                       @RequestParam String phoneNumber,
                                       @RequestParam int activity,
-                                      @RequestParam String bio) {
-        AppUser newUser = new AppUser(username, firstName, lastName, bCryptPasswordEncoder.encode(password), phoneNumber, activity, bio);
+                                      @RequestParam String bio,
+                                      @RequestParam String imgUrl) {
+        AppUser newUser = new AppUser(username, firstName, lastName, bCryptPasswordEncoder.encode(password), phoneNumber, activity, bio, imgUrl);
         appUserRepository.save(newUser);
         Authentication authentication = new UsernamePasswordAuthenticationToken(newUser, null, new ArrayList<>());
         SecurityContextHolder.getContext().setAuthentication(authentication);

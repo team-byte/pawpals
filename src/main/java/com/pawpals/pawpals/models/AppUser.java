@@ -36,7 +36,7 @@ public class AppUser implements UserDetails {
 
     public AppUser() {}
 
-    public AppUser(String username, String firstName, String lastName, String password, String phoneNumber, int activity, String bio) {
+    public AppUser(String username, String firstName, String lastName, String password, String phoneNumber, int activity, String bio, String imgUrl) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -44,8 +44,10 @@ public class AppUser implements UserDetails {
         this.phoneNumber = phoneNumber;
         this.activity = activity;
         this.bio = bio;
+        this.rating = 5;
         this.petList = null;
         this.reviewListAboutMe = null;
+        this.imgUrl = imgUrl;
     }
 
     @Override
