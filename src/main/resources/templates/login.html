@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="style.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,13 +8,14 @@
 </head>
 <body>
     <div class="imgcarousel"></div>
-    <div class="loginbox">
+
+    <div class="login">
         <div th:if="${p == null}" class="loginform">
             <h1>Log in</h1>
             <form action="/login" method="POST">
                 <label for="username">Username: </label><input name="username" id="username" />
                 <label for="password">Password: </label><input name="password" id="password" />
-                <input type="submit" />
+                <input style="margin:30px 30px" type="submit" />
             </form>
         </div>
         <div th:if="${p != null}" class="greeting">
@@ -22,7 +24,7 @@
             <p><a th:href="@{/logout}">Logout!</a></p>
         </div>
         <div th:if="${p == null}" class="greeting">
-            <p><a th:href="@{/signup}">Not a member? Sign up here!</a></p>
+            <p><a th:href="@{/signup}" style="margin:30px 30px" >Not a member? Sign up here!</a></p>
         </div>
     </div>
 </body>
