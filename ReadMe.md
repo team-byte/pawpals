@@ -1,23 +1,23 @@
 ## Pawpals  
-**Version**: 1.0.0  
+**Version**: 1.1.0  
 
 ## Authors 
-- Chai.Narukulla
+- Chai Narukulla
 - Timothy J Busch
 - Kent Ketter
 - Peter Tynan
+- Stephen Chu
 
 ## Overview and User Stories
 
-- As a user i should be able to create/update my profile 
-- As a user, I want to be able to create a pet profile and add automatically have it associated my profile.
-- As a user, I want to be able to give reviews of other pets and users that I’ve had contact with.
-- As a user, I want to look at the profiles of other users and their dogs.
-- As a user, I want a way to show my time availability on my profile.
-- As a user, I want the app to signal at the end of a playdate to add a review to the:
-  - Petowner
-  - Person having the playdate
-- As a user, not logged in, I want to see images of the 
+- As a new user, I should be able to create a new profile with a user name and password selected by me.
+- As a registered user, I should be able to update my profile.
+- As a registered user, I want to be able to create a pet profile and automatically have it associated my user profile.
+- As a registered user, I want to be able to delete a pet profile and have all instances of the pet removed from PawPals.
+- As a registered user, I want to be able to review other pets and users that I’ve had contact with.
+- As a registered user, I want to look at the profiles of other users and their pets.
+- As a registered user, I want a way to show my time availability on my profile.
+- As a non registered user I want to see the login page and pet image carosel. 
 
 
 ## API
@@ -50,6 +50,7 @@ $ cd pawpals
     - open pawpals.java
     - run pawpalsApplication.java 
 - Terminal
+    - ```psql CREATE DB pawpals;```
     - ```./gradlew test```
     
     - build and run ```./gradlew bootRun```
