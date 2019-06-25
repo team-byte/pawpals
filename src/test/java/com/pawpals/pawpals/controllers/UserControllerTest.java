@@ -1,10 +1,13 @@
 package com.pawpals.pawpals.controllers;
 
+import com.pawpals.pawpals.models.AppUser;
+import com.pawpals.pawpals.models.AppUserRepository;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -30,6 +33,12 @@ public class UserControllerTest {
     @Autowired
     MockMvc mockMvc;
 
+//    @Autowired
+//    private TestEntityManager entityManager;
+
+
+    @Autowired
+    private AppUserRepository repository;
 
     @Test
     public void test_ControllerIsAutowired() {
@@ -55,10 +64,12 @@ public class UserControllerTest {
         mockMvc.perform(get("/createnewuser")).andExpect(content().string(containsString("")));
     }
 
+
 //    @Test
-//    public void testsignupRoute() throws Exception{
-//        mockMvc.perform(get("/petcreation")).andDo(print())
-//                .andExpect(status().isOk());
-//
+//    public void testExample() throws Exception {
+//        this.entityManager.persist(new AppUser("ChaiT", "Chai", "Naru", "password","2066788779"));
+//        AppUser user = this.repository.findByUsername("ChaiT");
+//        assertTrue(user.getFirstName().equals("Chai"));
 //    }
+
 }
