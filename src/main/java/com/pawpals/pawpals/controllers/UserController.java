@@ -40,8 +40,10 @@ public class UserController {
                                       @RequestParam String firstName,
                                       @RequestParam String lastName,
                                       @RequestParam String password,
-                                      @RequestParam String phoneNumber) {
-        AppUser newUser = new AppUser(username, firstName, lastName, bCryptPasswordEncoder.encode(password), phoneNumber);
+                                      @RequestParam String phoneNumber,
+                                      @RequestParam int activity,
+                                      @RequestParam String bio) {
+        AppUser newUser = new AppUser(username, firstName, lastName, bCryptPasswordEncoder.encode(password), phoneNumber, activity, bio);
         appUserRepository.save(newUser);
         Authentication authentication = new UsernamePasswordAuthenticationToken(newUser, null, new ArrayList<>());
         SecurityContextHolder.getContext().setAuthentication(authentication);
