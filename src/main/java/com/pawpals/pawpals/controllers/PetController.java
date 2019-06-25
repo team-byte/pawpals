@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -33,13 +34,7 @@ public class PetController {
 
     @PostMapping("/registernewpet")
     public RedirectView registerNewPet(Principal p, String name, String species, String breed, String age, String activity, String size, String imgUrl, String bio) {
-        Pet newPet = new Pet(
-                name, species, breed, bio,
-                Integer.parseInt(age),
-                Integer.parseInt(activity),
-                size, imgUrl,
-                appUserRepository.findByUsername(p.getName())
-                );
+        Pet newPet = new Pet(name, species, breed, bio, Integer.parseInt(age), Integer.parseInt(activity), size, imgUrl, appUserRepository.findByUsername(p.getName()));
         petRepository.save(newPet);
 
         return new RedirectView("/myProfile");
@@ -54,6 +49,9 @@ public class PetController {
         return "petProfile";
     }
 
-    @DeleteMapping("delete/{id}")
-    public String deletePet(Principal p, )
+    @GetMapping("delete/{id}")
+    public RedirectView deletePet(Principal p, Model m, @PathVariable("id") long id) {
+        petRepository.deleteById(id);
+        return new RedirectView("/petprofile");
+    }
 }

@@ -1,0 +1,14 @@
+<span th:fragment="addReview" xmlns:th="http://www.thymeleaf.org">
+    <form th:action="'/' + ${target.type} + '/' + ${target.id} + '/review'" method="POST">
+        <!-- target.type should be passed in as "users" or "pets" -->
+        <!-- target.id should be passed in as the ID of the target user or pet.       -->
+
+        <label for="rating">Rating (from 1 to 5): </label>
+        <input name="rating" id="rating" type="number"/>
+
+        <label for="body">Review:</label>
+        <textarea name="body" id="body" placeholder="Write your review!"></textarea>
+
+        <input type="submit" />
+    </form>
+</span>

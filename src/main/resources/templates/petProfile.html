@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Paw Pals Pets</title>
@@ -7,6 +7,11 @@
 <body>
 <h2>Welcome <span th:text="${user.username}"> here are your pets. </span></h2>
 
+<<<<<<< HEAD
 <div th:replace="fragment/PetFragment ::  petList"></div>
+=======
+
+<div th:replace="fragment/ReviewFragment :: addReview"></div>
+>>>>>>> 33d9edc21b047af3e8724db82ded9e05ab4bc655
 </body>
 </html>
