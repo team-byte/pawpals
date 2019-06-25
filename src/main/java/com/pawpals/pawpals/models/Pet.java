@@ -2,6 +2,7 @@ package com.pawpals.pawpals.models;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Pet {
@@ -23,8 +24,8 @@ public class Pet {
     @ManyToOne
     AppUser owner;
 
-//    @OneToMany (mappedBy = "reviewSubject")
-//    List<Review> reviewListAboutMe;
+    @OneToMany (mappedBy = "petReviewSubject")
+    List<Review.PetReview> reviewListAboutMe;
 
     public Pet() {}
 
@@ -38,7 +39,7 @@ public class Pet {
         this.size = size;
         this.imgUrl = imgUrl;
         this.rating = rating;
-//        this.owner = owner;
+        this.owner = owner;
     }
 
     public long getId() {
@@ -81,13 +82,13 @@ public class Pet {
         return rating;
     }
 
-//    public AppUser getOwner() {
-//        return owner;
-//    }
+    public AppUser getOwner() {
+        return owner;
+    }
 
-//    public List<Review> getReviewListAboutMe() {
-//        return reviewListAboutMe;
-//    }
+    public List<Review.PetReview> getReviewListAboutMe() {
+        return reviewListAboutMe;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -125,9 +126,9 @@ public class Pet {
         this.rating = rating;
     }
 
-//    public void setOwner(AppUser owner) {
-//        this.owner = owner;
-//    }
+    public void setOwner(AppUser owner) {
+        this.owner = owner;
+    }
 
     public void addReview(Review review) {
     }
