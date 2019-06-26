@@ -28,4 +28,7 @@ public class PawpalsController {
         return "login";
     }
 
+    @GetMapping("/aboutpawpals")
+    public String getAboutUs() { return "aboutpawpals"; }
+
 }
