@@ -37,7 +37,7 @@ public class PetController {
         Pet newPet = new Pet(name, species, breed, bio, Integer.parseInt(age), Integer.parseInt(activity), size, imgUrl, appUserRepository.findByUsername(p.getName()));
         petRepository.save(newPet);
 
-        return new RedirectView("/myProfile");
+        return new RedirectView("/myprofile");
     }
 
     @GetMapping("delete/{id}")

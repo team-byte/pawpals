@@ -22,18 +22,16 @@
                 <input style="margin:auto" type="submit" />
             </form>
         </div>
-        <a th:href="@{/signup}">Not a member Sign up here!</a>
 
         <div th:if="${p != null}" class="greeting">
             <p>Welcome [[${p.name}]]</p>
             <p><a th:href="@{/myprofile}">Go to your profile</a></p>
             <p><a th:href="@{/logout}">Logout!</a></p>
         </div>
+        <div th:if="${p == null}" class="greeting">
+            <p><a th:href="@{/signup}" >Not a member? Sign up here!</a></p>
+        </div>
 
     </div>
-
-
-
-
 </body>
 </html>
