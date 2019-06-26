@@ -39,6 +39,15 @@ public class Pet {
         this.size = size;
         this.imgUrl = imgUrl;
         this.owner = owner;
+        this.rating = 5;
+    }
+
+    public void updateRating() {
+        int sum = 0;
+        for (PetReview review : reviewListAboutMe) {
+            sum += review.rating;
+        }
+        rating = sum / reviewListAboutMe.size();
     }
 
     public long getId() {

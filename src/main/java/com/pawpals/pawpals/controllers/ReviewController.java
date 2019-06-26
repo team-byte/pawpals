@@ -34,9 +34,13 @@ public class ReviewController {
     public RedirectView addUserReview(@PathVariable long targetId, Principal p, String rating, String body) {
         AppUser targetUser = appUserRepository.findById(targetId).get();
         AppUser reviewAuthor = appUserRepository.findByUsername(p.getName());
-
         UserReview userReview = new UserReview(Integer.parseInt(rating), body, reviewAuthor, targetUser);
         userReviewRepository.save(userReview);
+
+        // Updates user's rating
+        targetUser = appUserRepository.findById(targetId).get();
+        targetUser.updateRating();
+        appUserRepository.save(targetUser);
 
         return new RedirectView("/users/" + targetId);
     }
@@ -45,9 +49,14 @@ public class ReviewController {
     public RedirectView addPetReview(@PathVariable long targetId, Principal p, String rating, String body) {
         Pet targetPet = petRepository.findById(targetId).get();
         AppUser reviewAuthor = appUserRepository.findByUsername(p.getName());
-
         PetReview petReview = new PetReview(Integer.parseInt(rating), body, reviewAuthor, targetPet);
         petReviewRepository.save(petReview);
+
+        // Updates user's rating
+        targetPet = petRepository.findById(targetId).get();
+        targetPet.updateRating();
+        petRepository.save(targetPet);
+
 
         return new RedirectView("/pets/" + targetId);
     }
