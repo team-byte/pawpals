@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="/style.css">
 <head>
     <meta charset="UTF-8">
     <title>Paw Pals Pets</title>
@@ -19,11 +20,25 @@
         <li> <span th:text="${target.rating}"></span></li>
         <li> <span th:text="${target.activity}"></span></li>
         <li> <span th:text="${target.bio}"></span></li>
-        <li> <a th:href="@{'/delete/' + ${target.id}}">Delete</a> </li>
+        <span th:if="${target.owner.username == principal.name}">
+            <li> <a th:href="@{'/delete/' + ${target.id}}">Delete</a> </li>
+        </span>
     </ul>
     <span th:if="${target.owner.username != principal.name}">
         <div th:replace="fragment/ReviewFragment::addReview"></div>
     </span>
+    <div>
+        <p>Reviews About [[${target.name}]]:</p>
+        <ul>
+            <li th:each="review: ${target.reviewListAboutMe}">
+                <p th:text="${review.rating}"></p>
+                <p th:text="${review.body}"></p>
+                <p th:text="${review.author.username}"></p>
+            </li>
+        </ul>
+    </div>
+
+
 </div>
 </body>
 </html>
