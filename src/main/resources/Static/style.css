@@ -156,5 +156,19 @@ max-width:400px;
 margin:auto;
 }
 
+#errorMsg {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+img {
+    border-radius: 9px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 
+}
+
+.err{
+text-align:center}
 
