@@ -8,25 +8,25 @@
     <title>Error</title>
 </head>
 <body>
-<h1>You Broke The INTERNET!!!! </h1>
-
-<table>
-    <tr>
-        <td>Path</td>
+<h1 class="err">"You Broke The Internet Human" .</h1>
+<img src="/Error.jpg" alt="Error" width="500px">
+<table id="errorMsg">
+    <tr><td>Path:</td>
         <td th:text="${path}"/>
     </tr>
     <tr>
-        <td>Error</td>
+        <td>Error:</td>
         <td th:text="${error}"/>
     </tr>
     <tr>
-        <td>Status</td>
+        <td>Status:</td>
         <td th:text="${status}"/>
     </tr>
     <tr>
-        <td>Message</td>
+        <td>Message:</td>
         <td th:text="${message}"/>
     </tr>
 </table>
+
 </body>
 </html>
