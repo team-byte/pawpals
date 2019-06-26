@@ -169,6 +169,10 @@ img {
 
 }
 
+.loginBody {
+    background-image: url(background.jpg)
+}
+
 .err{
 text-align:center}
 
