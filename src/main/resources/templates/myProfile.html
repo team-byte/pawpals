@@ -30,7 +30,7 @@
             <li th:each="review: ${user.reviewListAboutMe}">
                 <p th:text="${review.rating}"></p>
                 <p th:text="${review.body}"></p>
-                <p th:text="${review.author}"></p>
+                <p th:text="${review.author.username}"></p>
             </li>
         </ul>
     </div>
@@ -43,7 +43,7 @@
             <li th:each="review: ${user.reviewsListAuthored}">
                 <p th:text="${review.rating}"></p>
                 <p th:text="${review.body}"></p>
-                <p th:text="${review.author}"></p>
+                <p th:text="${review.userReviewSubject.username}"></p>
             </li>
         </ul>
     </div>

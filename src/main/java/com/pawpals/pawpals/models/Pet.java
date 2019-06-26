@@ -25,7 +25,7 @@ public class Pet {
     AppUser owner;
 
     @OneToMany (mappedBy = "petReviewSubject")
-    List<Review.PetReview> reviewListAboutMe;
+    List<PetReview> reviewListAboutMe;
 
     public Pet() {}
 
@@ -85,7 +85,7 @@ public class Pet {
         return owner;
     }
 
-    public List<Review.PetReview> getReviewListAboutMe() {
+    public List<PetReview> getReviewListAboutMe() {
         return reviewListAboutMe;
     }
 
