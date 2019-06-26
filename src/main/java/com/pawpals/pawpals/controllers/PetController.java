@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -52,5 +53,12 @@ public class PetController {
         m.addAttribute("target", targetPet);
         m.addAttribute("type", "pets");
         return "petProfile";
+    }
+
+    @GetMapping("/pets")
+    public String getPets(Principal p, Model m) {
+        ArrayList<Pet> petList = (ArrayList) petRepository.findAll();
+        m.addAttribute("pets", petList);
+        return "petList";
     }
 }

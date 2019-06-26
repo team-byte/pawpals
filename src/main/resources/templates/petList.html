@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Paw Pals User Info</title>
+    <link rel="shortcut icon" type="image/x-icon" href="demi.ico" />
+
+</head>
+<body>
+<div>
+    <ul th:fragment= "petList(pets)" th:each="pet : ${pets}" >
+        <li> <img th:src="@{${pet.imgUrl}}"/></li>
+        <li> <span th:text="${pet.name}"></span></li>
+        <li> <span th:text="${pet.owner.username}"></span></li>
+        <li> <span th:text="${pet.species}"></span></li>
+        <li> <span th:text="${pet.breed}"></span></li>
+        <li> <span th:text="${pet.age}"></span></li>
+        <li> <span th:text="${pet.rating}"></span></li>
+        <li> <span th:text="${pet.activity}"></span></li>
+        <li> <span th:text="${pet.bio}"></span></li>
+    </ul>
+<!--    <div th:replace="fragment/ReviewFragment::addReview"></div>-->
+</div>
+</body>
+</html>
