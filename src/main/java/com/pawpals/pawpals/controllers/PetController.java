@@ -52,6 +52,7 @@ public class PetController {
         Pet targetPet = petRepository.findById(id).get();
         m.addAttribute("target", targetPet);
         m.addAttribute("type", "pets");
+        m.addAttribute("principal", p);
         return "petProfile";
     }
 
