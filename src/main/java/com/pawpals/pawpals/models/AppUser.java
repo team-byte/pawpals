@@ -50,6 +50,14 @@ public class AppUser implements UserDetails {
         this.imgUrl = imgUrl;
     }
 
+    public void updateRating() {
+        int sum = 0;
+        for (UserReview review : reviewListAboutMe) {
+            sum += review.rating;
+        }
+        rating = sum / reviewListAboutMe.size();
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
