@@ -17,7 +17,7 @@
         </div>
         <ul>
             <li th:each="pet: ${user.petList}">
-                <a th:href="@{'/pets/' + pet.id}"><img th:src="${pet.imgUrl}" alt="petavatar" class="petavatar" /> <span th:text="${pet.name}"></span></a>
+                <a th:href="@{'/pets/' + ${pet.id}}"><img th:src="${pet.imgUrl}" alt="petavatar" class="petavatar" /> <span th:text="${pet.name}"></span></a>
             </li>
         </ul>
     </div>
@@ -47,6 +47,5 @@
             </li>
         </ul>
     </div>
-<!--    <div th:replace="fragment/addReview::addReview"></div>-->
 </body>
 </html>

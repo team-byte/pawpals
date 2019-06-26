@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Paw Pals User</title>
+</head>
+<body>
+    <h1>List of all Paw Pal Users:</h1>
+    <ul>
+        <li th:each="user: ${users}">
+            <a th:href="@{'/users/' + ${user.id}}"><img th:src="${user.imgUrl}" alt="useravatar" class="useravatar" /> <span th:text="${user.username}"></span></a>
+        </li>
+    </ul>
+</body>
+</html>
