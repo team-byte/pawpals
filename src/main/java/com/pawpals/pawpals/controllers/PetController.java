@@ -44,7 +44,7 @@ public class PetController {
     @GetMapping("delete/{id}")
     public RedirectView deletePet(Principal p, Model m, @PathVariable("id") long id) {
         petRepository.deleteById(id);
-        return new RedirectView("/petprofile");
+        return new RedirectView("/myprofile");
     }
 
     @GetMapping("/pets/{id}")
