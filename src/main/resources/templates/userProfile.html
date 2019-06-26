@@ -5,6 +5,8 @@
     <title>Paw Pals User Info</title>
 </head>
 <body>
+<div th:replace="fragment/HeaderFragment :: navigation">...</div>
+
     <div>
         <ul>
             <li> <img th:src="@{${target.imgUrl}}"/></li>

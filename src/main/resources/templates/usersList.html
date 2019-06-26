@@ -6,6 +6,8 @@
     <title>Paw Pals User</title>
 </head>
 <body>
+<div th:replace="fragment/HeaderFragment :: navigation">...</div>
+
     <h1>List of all Paw Pal Users:</h1>
     <ul>
         <li th:each="user: ${users}">
