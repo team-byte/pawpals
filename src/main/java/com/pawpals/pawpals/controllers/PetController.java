@@ -60,6 +60,7 @@ public class PetController {
     public String getPets(Principal p, Model m) {
         ArrayList<Pet> petList = (ArrayList) petRepository.findAll();
         m.addAttribute("pets", petList);
+        m.addAttribute("p", p);
         return "petList";
     }
 }
