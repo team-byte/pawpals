@@ -76,6 +76,7 @@ public class UserController {
     public String getUser(@PathVariable long id, Principal p, Model m) {
         AppUser user = appUserRepository.findById(id).get();
         m.addAttribute("target", user);
+        m.addAttribute("type", "users");
         return "userProfile";
     }
 }

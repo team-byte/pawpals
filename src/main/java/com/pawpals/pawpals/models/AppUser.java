@@ -29,7 +29,7 @@ public class AppUser implements UserDetails {
     List<Pet> petList;
 
     @OneToMany (mappedBy = "userReviewSubject")
-    List<Review.UserReview> reviewListAboutMe;
+    List<UserReview> reviewListAboutMe;
 
     @OneToMany (mappedBy = "author")
     List<Review> reviewsListAuthored;
@@ -117,7 +117,7 @@ public class AppUser implements UserDetails {
         return petList;
     }
 
-    public List<Review.UserReview> getReviewListAboutMe() {
+    public List<UserReview> getReviewListAboutMe() {
         return reviewListAboutMe;
     }
 

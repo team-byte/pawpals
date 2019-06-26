@@ -18,7 +18,10 @@ public class ReviewController {
     PetRepository petRepository;
 
     @Autowired
-    ReviewRepository reviewRepository;
+    ReviewRepository<PetReview> petReviewRepository;
+
+    @Autowired
+    ReviewRepository<UserReview> userReviewRepository;
 
     @PostMapping("/writenewreview")
     public RedirectView writeeNewReview(Principal p, String rating, String body, String target) {
@@ -32,10 +35,8 @@ public class ReviewController {
         AppUser targetUser = appUserRepository.findById(targetId).get();
         AppUser reviewAuthor = appUserRepository.findByUsername(p.getName());
 
-        Review review = new Review();
-
-        Review.UserReview userReview = review.new UserReview(Integer.parseInt(rating), body, reviewAuthor, targetUser);
-        reviewRepository.save(userReview);
+        UserReview userReview = new UserReview(Integer.parseInt(rating), body, reviewAuthor, targetUser);
+        userReviewRepository.save(userReview);
 
         return new RedirectView("/users/" + targetId);
     }
@@ -45,10 +46,8 @@ public class ReviewController {
         Pet targetPet = petRepository.findById(targetId).get();
         AppUser reviewAuthor = appUserRepository.findByUsername(p.getName());
 
-        Review review = new Review();
-
-        Review.PetReview petReview = review.new PetReview(Integer.parseInt(rating), body, reviewAuthor, targetPet);
-        reviewRepository.save(petReview);
+        PetReview petReview = new PetReview(Integer.parseInt(rating), body, reviewAuthor, targetPet);
+        petReviewRepository.save(petReview);
 
         return new RedirectView("/pets/" + targetId);
     }
