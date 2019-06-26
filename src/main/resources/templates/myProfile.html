@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <title>My Paw Pals Profile</title>
+    <title>[[${user.username}]]'s Profile</title>
 </head>
 <body>
-<div th:replace="fragment/HeaderFragment :: navigation">...</div>
+    <div th:replace="fragment/HeaderFragment :: navigation">...</div>
 
     <div th:replace="fragment/UserFragment::userprofile"></div>
     <div class="scheduler">

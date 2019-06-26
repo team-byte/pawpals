@@ -48,7 +48,7 @@ public class UserController {
         appUserRepository.save(newUser);
         Authentication authentication = new UsernamePasswordAuthenticationToken(newUser, null, new ArrayList<>());
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        return new RedirectView("/");
+        return new RedirectView("/myprofile");
     }
 
     @GetMapping("/myprofile")
@@ -76,6 +76,7 @@ public class UserController {
     public String getUser(@PathVariable long id, Principal p, Model m) {
         AppUser user = appUserRepository.findById(id).get();
         m.addAttribute("target", user);
+        m.addAttribute("user", user);
         m.addAttribute("type", "users");
         return "userProfile";
     }

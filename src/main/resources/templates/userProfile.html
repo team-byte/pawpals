@@ -1,25 +1,51 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Paw Pals User Info</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
     <link rel="shortcut icon" type="image/x-icon" href="demi.ico" />
+    <title>[[${target.username}]]'s Profile</title>
 </head>
 <body>
-<div th:replace="fragment/HeaderFragment :: navigation">...</div>
+    <div th:replace="fragment/HeaderFragment :: navigation">...</div>
+
+    <div th:replace="fragment/UserFragment::userprofile"></div>
+    <div class="scheduler">
+        <p>Current Schedule</p>
+    </div>
 
     <div>
+        <p>Pet List:</p>
         <ul>
-            <li> <img th:src="@{${target.imgUrl}}"/></li>
-            <li> <span th:text="${target.username}"></span></li>
-            <li> <span th:text="${target.firstName}"></span></li>
-            <li> <span th:text="${target.lastName}"></span></li>
-            <li> <span th:text="${target.phoneNumber}"></span></li>
-            <li> <span th:text="${target.activity}"></span></li>
-            <li> <span th:text="${target.rating}"></span></li>
-            <li> <span th:text="${target.bio}"></span></li>
+            <li th:each="pet: ${target.petList}">
+                <a th:href="@{'/pets/' + ${pet.id}}"><img th:src="${pet.imgUrl}" alt="petavatar" class="petavatar" /> <span th:text="${pet.name}"></span></a>
+            </li>
         </ul>
-        <div th:replace="fragment/ReviewFragment::addReview"></div>
     </div>
+
+    <div>
+        <p>Reviews About [[${target.username}]]:</p>
+        <ul>
+            <li th:each="review: ${target.reviewListAboutMe}">
+                <p th:text="${review.rating}"></p>
+                <p th:text="${review.body}"></p>
+                <p th:text="${review.author.username}"></p>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <p>Reviews By [[${target.username}]]:</p>
+        <ul>
+            <li th:each="review: ${target.reviewsListAuthored}">
+                <p th:text="${review.rating}"></p>
+                <p th:text="${review.body}"></p>
+                <p th:text="${review.author.username}"></p>
+            </li>
+        </ul>
+    </div>
+
+    <div th:replace="fragment/ReviewFragment::addReview"></div>
 </body>
 </html>
