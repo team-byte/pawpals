@@ -11,7 +11,7 @@
     <div th:replace="fragment/HeaderFragment :: navigation">...</div>
     <h1>List of all Paw Pals:</h1>
     <ul>
-        <li th:each="pet: ${pets}">
+        <li class=petlistitem th:each="pet: ${pets}">
             <a th:href="@{'/pets/' + ${pet.id}}">
                 <img th:src="${pet.imgUrl}" alt="petavatar" class="petavatar" height="300px" />
                 <p th:text="${pet.name}"></p>
