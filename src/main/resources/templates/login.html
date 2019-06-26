@@ -9,61 +9,28 @@
 
 </head>
 <body class="loginBody">
-<div th:replace="fragment/HeaderFragment :: navigation">...</div>
-
     <div class="login">
         <div th:if="${p == null}" class="loginform">
 
 
 
-            <h1>Paw Pals Login</h1>
+            <h1>Welcome to PawPals! Please log into your PalProfile</h1>
 
             <form action="/login" method="POST">
                 <label for="username">Username: </label><input name="username" id="username" />
-                <label for="password">Password: </label><input name="password" id="password" />
-                <input style="margin:auto" type="submit" />
+                <label for="password">Password: </label><input name="password" id="password" type="password"/>
+                <input style="margin:auto" type="submit" value="Log In, Pal" />
             </form>
         </div>
 
-        <div th:if="${p != null}" class="greeting">
-            <p>Welcome to Pawpawls!</p>
-            <p>Your home for pet socialization and happiness. ADD MORE CONTENT ABOUT MEETING/GREETING PETS</p>
-            <div id="aboutMe">
-            <img src="Static/chai.png">
-                <p> I have a background in Aerospace,E-commerce and Casino management.
-                    I am looking to apply My new  development skills to use an innovative,
-                    user-centric approach to solve problems for others.
-                    I believes that problem solving should be organic, data-driven, and iterative.
-                    In my spare time, you'll find me Watching Cosmos, Cooking, spending time with my dog </p>
-            </div>
-            <div id="aboutMe2">
-                <img src="Static/peter.png">
-                <p>I love to launch myself out of my bubble. The two greatest traits I value in a person are critical thinking and empathy. I'm getting a tattoo of the word 'indecisive', but I'm not sure where to put it. UPDATE: I got it on my left wrist!
-                    I'm new to the field of programming, and hungry to learn more. In a past life I was going to be a math teacher, and those experiences teaching have sharpened me as a learner. I spent 7 months last year training with the US Army, eating dirt and learning the secrets of network administration. I'm currently halfway through an 18 week code bootcamp at Code Fellows, learning object oriented programming in Java!
-                    I give a mean explanation of the Monty Hall problem. Born and raised in the PNW - naturally I love the rain. Experienced with customer service and with a mop. My passions include stories, games, puzzles, and horrible puns. </p>
-            </div>
-            <div id="aboutMe3">
-                <img src="Static/kent.png">
-                <p>I love to launch myself out of my bubble. The two greatest traits I value in a person are critical thinking and empathy. I'm getting a tattoo of the word 'indecisive', but I'm not sure where to put it. UPDATE: I got it on my left wrist!
-                    I'm new to the field of programming, and hungry to learn more. In a past life I was going to be a math teacher, and those experiences teaching have sharpened me as a learner. I spent 7 months last year training with the US Army, eating dirt and learning the secrets of network administration. I'm currently halfway through an 18 week code bootcamp at Code Fellows, learning object oriented programming in Java!
-                    I give a mean explanation of the Monty Hall problem. Born and raised in the PNW - naturally I love the rain. Experienced with customer service and with a mop. My passions include stories, games, puzzles, and horrible puns. </p>
-            </div>
-            <div id="aboutMe4">
-                <img src="Static/GB.png">
-                <p>I love to launch myself out of my bubble. The two greatest traits I value in a person are critical thinking and empathy. I'm getting a tattoo of the word 'indecisive', but I'm not sure where to put it. UPDATE: I got it on my left wrist!
-                    I'm new to the field of programming, and hungry to learn more. In a past life I was going to be a math teacher, and those experiences teaching have sharpened me as a learner. I spent 7 months last year training with the US Army, eating dirt and learning the secrets of network administration. I'm currently halfway through an 18 week code bootcamp at Code Fellows, learning object oriented programming in Java!
-                    I give a mean explanation of the Monty Hall problem. Born and raised in the PNW - naturally I love the rain. Experienced with customer service and with a mop. My passions include stories, games, puzzles, and horrible puns. </p>
-            </div>
-            <div id="aboutMe5">
-                <img src="Static/steven.png">
-                <p>I love to launch myself out of my bubble. The two greatest traits I value in a person are critical thinking and empathy. I'm getting a tattoo of the word 'indecisive', but I'm not sure where to put it. UPDATE: I got it on my left wrist!
-                    I'm new to the field of programming, and hungry to learn more. In a past life I was going to be a math teacher, and those experiences teaching have sharpened me as a learner. I spent 7 months last year training with the US Army, eating dirt and learning the secrets of network administration. I'm currently halfway through an 18 week code bootcamp at Code Fellows, learning object oriented programming in Java!
-                    I give a mean explanation of the Monty Hall problem. Born and raised in the PNW - naturally I love the rain. Experienced with customer service and with a mop. My passions include stories, games, puzzles, and horrible puns. </p>
-            </div>
+        <div th:if="${p != null}" class="loginform">
+            <h1>You're already logged in, <span th:text="${p.name}"></span></h1>
         </div>
+
         <div th:if="${p == null}" class="greeting">
-            <p><a th:href="@{/signup}" >Not a member? Sign up here!</a></p>
+            <p><a th:href="@{/signup}" >Not a PawPal? Sign up here!</a></p>
         </div>
+        <div th:replace="fragment/SignUpFragment :: aboutus">...</div>
 
     </div>
 </body>
