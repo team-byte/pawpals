@@ -10,6 +10,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect;
+
 
 @Configuration
 @EnableWebSecurity
@@ -56,6 +58,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public UserDetailsServiceImpl getUserDetailsService() {
         return new UserDetailsServiceImpl();
+    }
+
+    @Configuration
+    public class ThymeleafConfig {
+
+        @Bean
+        public SpringSecurityDialect springSecurityDialect(){
+            return new SpringSecurityDialect();
+        }
     }
 
 }

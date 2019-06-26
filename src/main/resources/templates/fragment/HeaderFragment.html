@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.springframework.org/schema/security">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <header class="header" th:fragment="header">
-        <h1>CodeFellowShip!</h1>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/pets">Find Your Pals</a>
-            <a href="/users/myprofile">My Profile</a>
+<header class="navigation" th:fragment="navigation" xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.w3.org/1999/xhtml">
+    <nav>
+        <a href="/">PetPals</a>
+
+        <span sec:authorize="isAnonymous()">
+            <a href="/signup">Sign Up</a>
+            <a href="/login">Log In</a>
+        </span>
+
+        <span sec:authorize="isAuthenticated()">
+<!--            <a href="/feed">View Your Newsfeed</a>-->
+            <a href="/users">View All Users</a>
+            <a href="/myprofile">My Profile</a>
             <a href="/logout">Log out</a>
-        </nav>
-    </header>
-</body>
-</html>
+        </span>
+    </nav>
+</header>

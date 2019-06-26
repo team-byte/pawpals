@@ -6,6 +6,8 @@
     <title>My Paw Pals Profile</title>
 </head>
 <body>
+<div th:replace="fragment/HeaderFragment :: navigation">...</div>
+
     <div th:replace="fragment/UserFragment::userprofile"></div>
     <div class="scheduler">
         <p>My Current Schedule</p>
