@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Paw Pals Pets</title>
+    <link rel="stylesheet" href="/style.css">
     <link rel="shortcut icon" type="image/x-icon" href="demi.ico" />
 </head>
 <body>
@@ -19,11 +20,27 @@
         <li> <span th:text="${target.rating}"></span></li>
         <li> <span th:text="${target.activity}"></span></li>
         <li> <span th:text="${target.bio}"></span></li>
-        <li> <a th:href="@{'/delete/' + ${target.id}}">Delete</a> </li>
+
+        <span th:if="${target.owner.username == principal.name}">
+            <li> <a th:href="@{'/delete/' + ${target.id}}">Delete</a> </li>
+        </span>
+
     </ul>
-    <span th:if="${target.owner.username != principal.name}">
-        <div th:replace="fragment/ReviewFragment::addReview"></div>
-    </span>
+</div>
+
+<span th:if="${target.owner.username != principal.name}">
+    <div th:replace="fragment/ReviewFragment::addReview"></div>
+</span>
+
+<div>
+    <p>Reviews About [[${target.name}]]:</p>
+    <ul>
+        <li th:each="review: ${target.reviewListAboutMe}">
+            <p th:text="${review.rating}"></p>
+            <p th:text="${review.body}"></p>
+            <p th:text="${review.author.username}"></p>
+        </li>
+    </ul>
 </div>
 </body>
 </html>
