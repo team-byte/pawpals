@@ -19,7 +19,7 @@
         <p>Pet List:</p>
         <ul>
             <li th:each="pet: ${target.petList}">
-                <a th:href="@{'/pets/' + ${pet.id}}"><img th:src="${pet.imgUrl}" alt="petavatar" class="petavatar" /> <span th:text="${pet.name}"></span></a>
+                <a th:href="@{'/pets/' + ${pet.id}}"><img th:src="${pet.imgUrl}" alt="petavatar" class="petavatar" height="300px" /> <span th:text="${pet.name}"></span></a>
             </li>
         </ul>
     </div>
