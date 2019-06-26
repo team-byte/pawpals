@@ -21,7 +21,9 @@
         <li> <span th:text="${target.bio}"></span></li>
         <li> <a th:href="@{'/delete/' + ${target.id}}">Delete</a> </li>
     </ul>
-    <div th:replace="fragment/ReviewFragment::addReview">
+    <span th:if="${target.owner.username != principal.name}">
+        <div th:replace="fragment/ReviewFragment::addReview"></div>
+    </span>
 </div>
 </body>
 </html>
