@@ -6,6 +6,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="demi.ico" />
 </head>
 <body>
+<div th:replace="fragment/HeaderFragment :: navigation">...</div>
+
     <div>
         <ul>
             <li> <img th:src="@{${target.imgUrl}}"/></li>

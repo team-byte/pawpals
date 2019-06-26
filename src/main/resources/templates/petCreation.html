@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Add a Pet</title>
     <link rel="shortcut icon" type="image/x-icon" href="demi.ico" />
 </head>
 <body>
+<div th:replace="fragment/HeaderFragment :: navigation">...</div>
+
 <h1>Add a Pet!</h1>
 <form action="/registernewpet" method="POST">
     <label for="name">Pet's Name: </label>
