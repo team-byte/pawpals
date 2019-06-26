@@ -16,6 +16,7 @@
         <div th:if="${#lists.isEmpty(user.petList)}">
             <p>You have no animal friends</p>
         </div>
+        <a th:href="@{/petcreation}">Add New Pet</a>
         <ul>
             <li th:each="pet: ${user.petList}">
                 <a th:href="@{'/pets/' + ${pet.id}}"><img th:src="${pet.imgUrl}" alt="petavatar" class="petavatar" /> <span th:text="${pet.name}"></span></a>
@@ -44,7 +45,7 @@
             <li th:each="review: ${user.reviewsListAuthored}">
                 <p th:text="${review.rating}"></p>
                 <p th:text="${review.body}"></p>
-                <p th:text="${review.userReviewSubject.username}"></p>
+                <p th:text="${review.author.username}"></p>
             </li>
         </ul>
     </div>
