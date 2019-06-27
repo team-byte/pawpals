@@ -4,10 +4,11 @@
         <a class="home" href="/aboutpawpals">Paw Pals</a>
 
         <span class="nav-right">
-            <a href="/users">View All Users</a>
-            <a href="/pets">View All Pets</a>
-            <a href="/myprofile">My Profile</a>
-            <a href="/logout">Log out</a>
+            <a th:if="${p != null}" href="/users">View All Users</a>
+            <a th:if="${p != null}" href="/pets">View All Pets</a>
+            <a th:if="${p != null}" href="/myprofile">My Profile</a>
+            <a th:if="${p != null}" href="/logout">Log out</a>
+            <a th:if="${p == null}" href="/login">Log In</a>
         </span>
     </nav>
 </header>

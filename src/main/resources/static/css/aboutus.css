@@ -13,6 +13,9 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    width: 80%
+    margin: 15px;
+    content 5px;
 }
 
 .aboutme {
@@ -25,4 +28,12 @@ body {
       border-radius: 10px;
       padding: 16px;
       margin: 16px 0;
+}
+
+h1,h2 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 1em;
 }
