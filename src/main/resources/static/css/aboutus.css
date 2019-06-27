@@ -2,3 +2,9 @@ img {
     width: 100%;
     max-width: 200px;
 }
+
+body {
+    background-color: white;
+    color: red;
+    font-family: 'Noto Serif', serif;
+}
