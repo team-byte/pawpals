@@ -53,6 +53,7 @@ public class PetController {
         m.addAttribute("target", targetPet);
         m.addAttribute("type", "pets");
         m.addAttribute("principal", p);
+        m.addAttribute("p", p);
         return "petProfile";
     }
 

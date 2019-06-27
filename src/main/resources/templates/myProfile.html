@@ -10,12 +10,9 @@
     <div th:replace="fragment/HeaderFragment :: navigation">...</div>
 
     <a th:href="@{/updateprofile}">Update Profile</a>
-    <div th:replace="fragment/UserFragment::userprofile"></div>
-    <div class="scheduler">
-        <p>My Current Schedule</p>
-    </div>
-    <div>
-        <p>My Pet List:</p>
+    <div th:replace="fragment/UserFragment::userprofile" class="userprofile" ></div>
+    <div class="userprofile">
+        <h3>My Pet List:</h3>
         <div th:if="${#lists.isEmpty(user.petList)}">
             <p>You have no animal friends</p>
         </div>
@@ -26,27 +23,27 @@
             </li>
         </ul>
     </div>
-    <div>
-        <p>Reviews About Me:</p>
+    <div class="userprofile">
+        <h3>Reviews About Me:</h3>
         <ul>
             <div th:if="${#lists.isEmpty(user.reviewListAboutMe)}">
                 <p>No reviews about you. Go on play dates!</p>
             </div>
             <div class="container" th:each="review: ${user.reviewListAboutMe}">
-                <p th:text="${review.author.firstName} + ' ' + ${review.author.lastName} + ' says:'"></p>
+                <p><b><span th:text="${review.author.firstName} + ' ' + ${review.author.lastName}" ></span></b> says:</p>
                 <p th:text="${review.body} + ' ~ ' +  ${review.rating} + ' stars out of 5.'"></p>
             </div>
         </ul>
     </div>
-    <div>
-        <p>Reviews You've Written:</p>
+    <div class="userprofile">
+        <h3>Reviews You've Written:</h3>
         <ul>
             <div th:if="${#lists.isEmpty(user.reviewsListAuthored)}">
                 <p>You haven't left any reviews!</p>
             </div>
 
             <div class="container" th:each="review: ${user.reviewsListAuthored}">
-                <p th:text="'You said about ' + ${review.targetName} + ':'"></p>
+                <p><b><span th:text="'You said about ' + ${review.targetName}" ></span></b>:</p>
                 <p th:text="${review.body} + ' ~ ' +  ${review.rating} + ' stars out of 5.'"></p>
             </div>
         </ul>

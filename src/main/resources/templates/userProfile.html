@@ -11,12 +11,8 @@
     <div th:replace="fragment/HeaderFragment :: navigation">...</div>
 
     <div th:replace="fragment/UserFragment::userprofile"></div>
-    <div class="scheduler">
-        <p>Current Schedule</p>
-    </div>
-
-    <div>
-        <p>Pet List:</p>
+    <div class="userprofile">
+        <h3>Pet List:</h3>
         <ul>
             <li th:each="pet: ${target.petList}">
                 <a th:href="@{'/pets/' + ${pet.id}}"><img th:src="${pet.imgUrl}" alt="petavatar" class="petavatar" height="300px" /> <span th:text="${pet.name}"></span></a>
@@ -24,22 +20,21 @@
         </ul>
     </div>
 
-    <div>
-        <p>Reviews About [[${target.username}]]:</p>
+    <div class="userprofile">
+        <h3>Reviews About [[${target.username}]]:</h3>
         <ul>
             <div class="container" th:each="review: ${target.reviewListAboutMe}">
-                <p th:text="${review.author.firstName} + ' ' + ${review.author.lastName} + ' says:'"></p>
+                <p><b><span th:text="${review.author.firstName} + ' ' + ${review.author.lastName}" ></span></b> says:</p>
                 <p th:text="${review.body} + ' ~ ' +  ${review.rating} + ' stars out of 5.'"></p>
             </div>
         </ul>
     </div>
 
-    <div>
-        <p>Reviews By [[${target.username}]]:</p>
+    <div class="userprofile">
+        <h3>Reviews By [[${target.username}]]:</h3>
         <ul>
             <div class="container" th:each="review: ${target.reviewsListAuthored}">
-                <p th:text="${target.username} + ' said about ' + ${review.targetName} + ':'"></p>
-
+                <p><b><span th:text="${target.firstName}"></span></b> said about <b><span th:text="${review.targetName}" ></span></b>:</p>
                 <p th:text="${review.body} + ' ~ ' +  ${review.rating} + ' stars out of 5.'"></p>
             </div>
         </ul>
