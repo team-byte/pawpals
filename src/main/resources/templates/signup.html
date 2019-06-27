@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/base-min.css">
-<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" href="css/style.css">
 <link rel="shortcut icon" type="image/x-icon" href="demi.ico" />
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pawpals Sign Up</title>
 </head>
-<body class="singupbody">
+<body>
 <div th:replace="fragment/HeaderFragment :: navigation">...</div>
 
 
 <div class="sin">
     <h1>Pawpals New User form</h1>
     <form action="/createnewuser" method="POST">
-        <input placeholder="UserName"name="username" id="username" />
+        <input placeholder="Username"name="username" id="username" />
         <input placeholder="Password"name="password" id="password" />
-        <input placeholder="FirstName" name="firstName" id="firstName" />
+        <input placeholder="First Name" name="firstName" id="firstName" />
         <input placeholder="LastName" name="lastName" id="lastName" />
-        <input placeholder="PhoneNumber"name="phoneNumber" id="phoneNumber" />
+        <input placeholder="Phone Number"name="phoneNumber" id="phoneNumber" type="tel" pattern="[0-9]{10}"/>
         <input placeholder="Select Your Activity Level from 1-10:" type="number" name="activity" id="activity" />
-        <input placeholder="Your Bio"name="bio" id="bio" />
-        <input placeholder="Imagr URL"name="imgUrl" id="imgUrl" />
+        <input placeholder="Image URL"name="imgUrl" id="imgUrl" />
+        <input placeholder="Bio"name="bio" id="bio" />
         <input type="submit" />
     </form>
 </div>
