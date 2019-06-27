@@ -13,7 +13,14 @@
     <ul>
         <li> <img th:src="@{${target.imgUrl}}"/></li>
         <p>Name: <span th:text="${target.name}"></span></p>
-        <p>Owner: <span th:text="${target.owner.username}"></span></p>
+        <p>Owner: <br/>
+            <span th:if="${target.owner.username == principal.name}">
+                <a th:href="@{'/myprofile'}"><span th:text="${target.owner.firstName} + ' ' + ${target.owner.lastName}"></span></a>
+            </span>
+            <span th:if="${target.owner.username != principal.name}">
+                <a th:href="@{'/users/' + ${target.owner.id}}"><span th:text="${target.owner.firstName} + ' ' + ${target.owner.lastName}"></span></a>
+            </span>
+        </p>
         <p>Species: <span th:text="${target.species}"></span></p>
         <p>Breed: <span th:text="${target.breed}"></span></p>
         <p>Age: <span th:text="${target.age}"></span></p>
