@@ -2,16 +2,6 @@ body {
  background-color: #cccccc;
 }
 
-.login h1 {
-  box-sizing: border-box;
-  color: #727678;
-  display: block;
-  height: 55px;
-  font: 600 14px/1 'Open Sans', sans-serif;
-  padding-top: 30px;
-  margin: 0;
-  text-align: center;
-}
 input[type="password"], input[type="text"] {
   border-radius: 4px;
   box-shadow: 0 1px #fff;
@@ -236,4 +226,17 @@ header span {
 
 .rating {
     width: 45px;
+}
+
+#loginh1 {
+    font-size: 2em;
+     box-sizing: border-box;
+     color: #727678;
+     display: block;
+     height: 55px;
+     font: 600 'Open Sans', sans-serif;
+     padding-top: 30px;
+     margin: 0;
+     text-align: center;
+     margin-bottom: 20px;
 }
