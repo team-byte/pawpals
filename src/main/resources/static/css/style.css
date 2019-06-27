@@ -219,5 +219,13 @@ header {
 
 header span {
     margin-right: 30px;
-    }
+}
 
+
+.container {
+  border: 2px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0;
+}
