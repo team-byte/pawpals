@@ -237,3 +237,13 @@ header span {
 .rating {
     width: 45px;
 }
+
+.createpetform {
+    max-width: 600px;
+    margin: 15px auto;
+    background-color: #eee;
+    opacity:0.9;
+    border-radius: 5px;
+    padding: 16px;
+
+}
