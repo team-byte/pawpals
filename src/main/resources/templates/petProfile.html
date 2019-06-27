@@ -10,8 +10,8 @@
 <div th:replace="fragment/HeaderFragment :: navigation">...</div>
 
 <div>
-    <ul>
-        <li> <img th:src="@{${target.imgUrl}}"/></li>
+    <img th:src="@{${target.imgUrl}}" height="300px"/>
+    <div class="container">
         <p>Name: <span th:text="${target.name}"></span></p>
         <p>Owner: <br/>
             <span th:if="${target.owner.username == principal.name}">
@@ -32,7 +32,7 @@
             <a th:href="@{'/delete/' + ${target.id}}">Delete</a>
         </span>
 
-    </ul>
+    </div>
 </div>
 
 <span th:if="${target.owner.username != principal.name}">
