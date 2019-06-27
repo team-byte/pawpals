@@ -69,6 +69,7 @@ public class UserController {
                 users.add(user);
         }
         m.addAttribute("users", users);
+        m.addAttribute("p", p);
         return "usersList";
     }
 
@@ -78,6 +79,7 @@ public class UserController {
         m.addAttribute("target", user);
         m.addAttribute("user", user);
         m.addAttribute("type", "users");
+        m.addAttribute("p", p);
         return "userProfile";
     }
 
@@ -107,6 +109,7 @@ public class UserController {
         user.setBio(bio);
         user.setImgUrl(imgUrl);
         appUserRepository.save(user);
+        m.addAttribute("p", p);
         return new RedirectView("/myprofile");
     }
 }

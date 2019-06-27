@@ -29,6 +29,7 @@ public class PawpalsController {
     }
 
     @GetMapping("/aboutpawpals")
-    public String getAboutUs() { return "aboutpawpals"; }
-
+    public String getAboutUs(Principal p, Model m) {
+        m.addAttribute("p", p);
+        return "aboutpawpals"; }
 }
