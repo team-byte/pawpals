@@ -80,4 +80,33 @@ public class UserController {
         m.addAttribute("type", "users");
         return "userProfile";
     }
+
+    @GetMapping("/updateprofile")
+    public String getUpdateProfile(Principal p, Model m) {
+        AppUser user = appUserRepository.findByUsername(p.getName());
+        m.addAttribute("p", p);
+        m.addAttribute("user", user);
+        m.addAttribute("target", user);
+        return "updateprofile";
+    }
+
+    @PostMapping("/updateprofile")
+    public RedirectView updateProfile(@RequestParam String firstName,
+                                      @RequestParam String lastName,
+                                      @RequestParam String phoneNumber,
+                                      @RequestParam int activity,
+                                      @RequestParam String bio,
+                                      @RequestParam String imgUrl,
+                                      Principal p,
+                                      Model m) {
+        AppUser user = appUserRepository.findByUsername(p.getName());
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        user.setPhoneNumber(phoneNumber);
+        user.setActivity(activity);
+        user.setBio(bio);
+        user.setImgUrl(imgUrl);
+        appUserRepository.save(user);
+        return new RedirectView("/myprofile");
+    }
 }
