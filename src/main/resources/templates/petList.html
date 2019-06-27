@@ -15,15 +15,6 @@
             <a th:href="@{'/pets/' + ${pet.id}}">
                 <img th:src="${pet.imgUrl}" alt="petavatar" class="petavatar" height="300px" />
                 <p th:text="${pet.name}"></p>
-<!--                <p th:text="'Owner\'s name: ' + ${pet.owner.firstName}"></p>-->
-            </a>
-            <a th:if="${pet.owner.username == p.name}" th:href="@{/myprofile}">
-                <img th:src="${pet.owner.imgUrl}" alt="useravatar" class="useravatar" height="300px"/>
-                <p th:text="${pet.owner.username}"></p>
-            </a>
-            <a th:if="${pet.owner.username != p.name}" th:href="@{'/users/' + ${pet.owner.id}}">
-                <img th:src="${pet.owner.imgUrl}" alt="useravatar" class="useravatar" height="300px"/>
-                <p th:text="${pet.owner.username}"></p>
             </a>
         </li>
     </ul>
