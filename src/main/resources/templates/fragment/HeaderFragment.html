@@ -1,14 +1,9 @@
 <header class="navigation" th:fragment="navigation" xmlns:th="http://www.thymeleaf.org"
         xmlns:sec="http://www.w3.org/1999/xhtml">
     <nav>
-        <a href="/aboutpawpals">PawPals</a>
+        <a class="home" href="/aboutpawpals">PawPals</a>
 
-        <span sec:authorize="isAnonymous()">
-            <a href="/signup">Sign Up</a>
-            <a href="/login">Log In</a>
-        </span>
-
-        <span sec:authorize="isAuthenticated()">
+        <span class="nav-right">
             <a href="/users">View All Users</a>
             <a href="/pets">View All Pets</a>
             <a href="/myprofile">My Profile</a>
