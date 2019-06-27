@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/base-min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="shortcut icon" type="image/x-icon" href="demi.ico" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paw Pals Update Profile</title>
+</head>
+<body>
+<div th:replace="fragment/HeaderFragment :: navigation">...</div>
+
+
+<div class="sin">
+    <h1>Paw Pals Update Profile Form</h1>
+    <form action="/updateprofile" method="POST">
+        <label for="firstName"> New First Name:</label>
+        <input placeholder="First Name" name="firstName" id="firstName" th:value="${user.firstName}" />
+        <label for="lastName"> New Last Name:</label>
+        <input placeholder="LastName" name="lastName" id="lastName" th:value="${user.lastName}" />
+        <label for="phoneNumber"> New Phone Number:</label>
+        <input placeholder="Phone Number"name="phoneNumber" id="phoneNumber" type="tel" pattern="[0-9]{10}" th:value="${user.phoneNumber}" />
+        <label for="activity"> New Activity:</label>
+        <input placeholder="Select Your Activity Level from 1-10:" type="number" name="activity" id="activity" th:value="${user.activity}" />
+        <label for="imgUrl"> New Image URL:</label>
+        <input placeholder="Image URL"name="imgUrl" id="imgUrl" th:value="${user.imgUrl}" />
+        <label for="bio"> New Biography:</label>
+        <input placeholder="Bio"name="bio" id="bio" th:value="${user.bio}" />
+        <input type="submit" />
+    </form>
+</div>
+</body>
+</html>

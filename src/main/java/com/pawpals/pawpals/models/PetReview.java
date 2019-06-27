@@ -16,6 +16,7 @@ public class PetReview extends Review {
     public PetReview(int rating, String body, AppUser author, Pet petReviewSubject) {
         super(rating, body, author);
         this.petReviewSubject = petReviewSubject;
+        this.targetName = petReviewSubject.name;
     }
 
     public Pet getPetReviewSubject() {
