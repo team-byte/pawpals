@@ -233,3 +233,7 @@ header span {
 .userprofile {
   font-size: 20px;
 }
+
+.rating {
+    width: 45px;
+}
