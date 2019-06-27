@@ -30,6 +30,10 @@ body {
       margin: 16px 0;
 }
 
-.mission {
-    font-size: 3.25em;
+h1,h2 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 1em;
 }
