@@ -8,21 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pawpals Sign Up</title>
 </head>
-<body>
+<body class="singupbody">
 <div th:replace="fragment/HeaderFragment :: navigation">...</div>
 
 
 <div class="sin">
     <h1>Pawpals New User form</h1>
     <form action="/createnewuser" method="POST">
-        <label for="username">Username: </label><input name="username" id="username" />
-        <label for="password">Password: </label><input name="password" id="password" />
-        <label for="firstName">First Name: </label><input name="firstName" id="firstName" />
-        <label for="lastName">Last Name: </label><input name="lastName" id="lastName" />
-        <label for="phoneNumber">Phone Number: </label><input name="phoneNumber" id="phoneNumber" />
-        <label for="activity">Select Your Activity Level from 1-10: </label><input type="number" name="activity" id="activity" />
-        <label for="bio">Bio: </label><input name="bio" id="bio" />
-        <label for="imgUrl">Profile Photo Url: </label><input name="imgUrl" id="imgUrl" />
+        <input placeholder="UserName"name="username" id="username" />
+        <input placeholder="Password"name="password" id="password" />
+        <input placeholder="FirstName" name="firstName" id="firstName" />
+        <input placeholder="LastName" name="lastName" id="lastName" />
+        <input placeholder="PhoneNumber"name="phoneNumber" id="phoneNumber" />
+        <input placeholder="Select Your Activity Level from 1-10:" type="number" name="activity" id="activity" />
+        <input placeholder="Your Bio"name="bio" id="bio" />
+        <input placeholder="Imagr URL"name="imgUrl" id="imgUrl" />
         <input type="submit" />
     </form>
 </div>
