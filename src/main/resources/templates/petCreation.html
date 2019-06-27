@@ -6,44 +6,29 @@
     <link rel="shortcut icon" type="image/x-icon" href="demi.ico" />
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
-<body>
+<body class="petbody">
 <div th:replace="fragment/HeaderFragment :: navigation">...</div>
-
 <h1>Add a Pet!</h1>
 <form action="/registernewpet" method="POST">
-    <label for="name">Pet's Name: </label>
-    <input name="name" id="name" />
-
     <label for="species">Species: </label>
-    <select name="species" id="species">
+    <select  name="species" id="species">
         <option value="dog">Dog</option>
         <option value="cat">Cat</option>
         <option value="fish">Fish</option>
         <option value="bird">Bird</option>
     </select>
-    <br/>
-    <label for="breed">Breed: </label>
-    <input name="breed" id="breed" />
-
-    <label for="age">Age: </label>
-    <input name="age" id="age" type="number"/>
-
-    <label for="activity">Activity level (from 1 to 5): </label>
-    <input name="activity" id="activity" type="number"/>
-
     <label for="size">Size: </label>
     <select name="size" id="size">
         <option value="small">Small</option>
         <option value="medium">Medium</option>
         <option value="large">Large</option>
     </select>
-    <br/>
-    <label for="imgUrl">Profile Picture URL: </label>
-    <input name="imgUrl" id="imgUrl" />
-
-    <label for="bio">Bio:</label>
-    <textarea name="bio" id="bio" placeholder="Describe your pet here!"></textarea>
-
+    <input  placeholder="Pet's Name:" name="name" id="name" />
+    <input placeholder="Breed:" name="breed" id="breed" />
+    <input placeholder="Pet's Age:" name="age" id="age" type="number"/>
+    <input placeholder="Activity level (from 1 to 5):" name="activity" id="activity" type="number"/>
+    <input placeholder="Image URL:" name="imgUrl" id="imgUrl" />
+    <input name="bio" id="bio" placeholder="Describe your pet here!"></input>
     <input type="submit" />
 </form>
 </body>

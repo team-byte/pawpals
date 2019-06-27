@@ -196,6 +196,14 @@ text-align:center}
   margin-left:82px;
 }
 
+
+.petbody{
+ background-image: url(../images/pets2.jpg);
+               background-repeat: no-repeat;
+               background-size: 100%;
+
+}
+
 header {
   background-color: #f44336;
     margin: 0;
@@ -212,3 +220,4 @@ header {
 header span {
     margin-right: 30px;
     }
+
