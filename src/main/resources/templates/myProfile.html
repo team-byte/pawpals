@@ -30,7 +30,7 @@
                 <p>No reviews about you. Go on play dates!</p>
             </div>
             <div class="container" th:each="review: ${user.reviewListAboutMe}">
-                <p th:text="${review.author.firstName} + ' ' + ${review.author.lastName} + ' says:'"></p>
+                <p><b><span th:text="${review.author.firstName} + ' ' + ${review.author.lastName}" ></span></b> says:</p>
                 <p th:text="${review.body} + ' ~ ' +  ${review.rating} + ' stars out of 5.'"></p>
             </div>
         </ul>
@@ -43,7 +43,7 @@
             </div>
 
             <div class="container" th:each="review: ${user.reviewsListAuthored}">
-                <p th:text="'You said about ' + ${review.targetName} + ':'"></p>
+                <p><b><span th:text="'You said about ' + ${review.targetName}" ></span></b>:</p>
                 <p th:text="${review.body} + ' ~ ' +  ${review.rating} + ' stars out of 5.'"></p>
             </div>
         </ul>

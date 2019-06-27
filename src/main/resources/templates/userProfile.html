@@ -24,7 +24,7 @@
         <h3>Reviews About [[${target.username}]]:</h3>
         <ul>
             <div class="container" th:each="review: ${target.reviewListAboutMe}">
-                <p th:text="${review.author.firstName} + ' ' + ${review.author.lastName} + ' says:'"></p>
+                <p><b><span th:text="${review.author.firstName} + ' ' + ${review.author.lastName}" ></span></b> says:</p>
                 <p th:text="${review.body} + ' ~ ' +  ${review.rating} + ' stars out of 5.'"></p>
             </div>
         </ul>
@@ -34,8 +34,7 @@
         <h3>Reviews By [[${target.username}]]:</h3>
         <ul>
             <div class="container" th:each="review: ${target.reviewsListAuthored}">
-                <p th:text="${target.username} + ' said about ' + ${review.targetName} + ':'"></p>
-
+                <p><b><span th:text="${target.firstName}"></span></b> said about <b><span th:text="${review.targetName}" ></span></b>:</p>
                 <p th:text="${review.body} + ' ~ ' +  ${review.rating} + ' stars out of 5.'"></p>
             </div>
         </ul>
