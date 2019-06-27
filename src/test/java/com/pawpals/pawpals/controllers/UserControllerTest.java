@@ -52,79 +52,87 @@ public class UserControllerTest {
 
     @Test
     public void test_AppUser_constructor_username() {
-        AppUser classUnderTest = new AppUser("chai", "password","chai","passwerd","289900223");
+        AppUser classUnderTest = new AppUser("chai", "Chai", "Naru", "password", "2899002231", 3, "this is a bio", "image.jpg");
         assertEquals("should return name chai","chai",classUnderTest.getUsername());
     }
 
     @Test
     public void test_AppUser_constructor_lname() {
-        AppUser classUnderTest = new AppUser("chai", "Test","Naru","passwerd","289900223");
+        AppUser classUnderTest = new AppUser("chai", "Chai", "Naru", "password", "2899002231", 3, "this is a bio", "image.jpg");
+
         assertEquals("should return name Naru","Naru",classUnderTest.getLastName());
     }
 
     @Test
     public void test_AppUser_constructor_fname() {
-        AppUser classUnderTest = new AppUser("chai", "chaiT","Naru","passwerd","289900223");
-        assertEquals("should return name chaiT","chaiT",classUnderTest.getFirstName());
+        AppUser classUnderTest = new AppUser("chai", "Chai", "Naru", "password", "2899002231", 3, "this is a bio", "image.jpg");
+
+        assertEquals("should return name Chai","Chai",classUnderTest.getFirstName());
     }
 
     @Test
     public void test_AppUser_constructor_Phonenumber() {
-        AppUser classUnderTest = new AppUser("chai", "chaiT","Naru","passwerd","289900223");
-        assertEquals("should return name 289900223","289900223",classUnderTest.getPhoneNumber());
+        AppUser classUnderTest = new AppUser("chai", "Chai", "Naru", "password", "2899002231", 3, "this is a bio", "image.jpg");
+
+        assertEquals("should return phone number 2899002231","2899002231",classUnderTest.getPhoneNumber());
     }
 
     @Test
     public void test_Pet_constructor_name(){
-        Pet classUndertest = new Pet("Demi","Dog","Bc",4,"good dog",4,"small","dig.jpg",4,new AppUser());
-        assertEquals("should return name Demi","Demi",classUndertest.getName());
+        Pet classUnderTest = new Pet("Demi", "dog", "border collie", "I am a good dog", 8, 4, "medium", "demi.jpg", new AppUser());
+        assertEquals("should return name Demi","Demi",classUnderTest.getName());
     }
 
     @Test
     public void test_Pet_constructor_breed(){
-        Pet classUndertest = new Pet("Demi","Dog","Bc",4,"good dog",4,"small","dig.jpg",4,new AppUser());
-        assertEquals("should return breed Dog","Bc",classUndertest.getBreed());
+        Pet classUnderTest = new Pet("Demi", "dog", "border collie", "I am a good dog", 8, 4, "medium", "demi.jpg", new AppUser());
+
+        assertEquals("should return breed 'border collie'","border collie",classUnderTest.getBreed());
     }
 
     @Test
     public void test_Pet_constructor_bio(){
-        Pet classUndertest = new Pet("Demi","Dog","Bc",4,"good dog",4,"small","dig.jpg",4,new AppUser());
-        assertEquals("should return Bio good dog","good dog",classUndertest.getBio());
+        Pet classUnderTest = new Pet("Demi", "dog", "border collie", "I am a good dog", 8, 4, "medium", "demi.jpg", new AppUser());
+
+        assertEquals("should return Bio 'I am a good dog'","I am a good dog",classUnderTest.getBio());
     }
 
     @Test
-    public void test_Pet_constructor_acitivity(){
-        Pet classUndertest = new Pet("Demi","Dog","Bc",4,"good dog",4,"small","dig.jpg",4,new AppUser());
-        assertEquals("should return activity good dog",4,classUndertest.getActivity());
+    public void test_Pet_constructor_activity(){
+        Pet classUnderTest = new Pet("Demi", "dog", "border collie", "I am a good dog", 8, 4, "medium", "demi.jpg", new AppUser());
+
+        assertEquals("should return activity good dog",4,classUnderTest.getActivity());
     }
 
     @Test
     public void test_Pet_constructor_size(){
-        Pet classUndertest = new Pet("Demi","Dog","Bc",4,"good dog",4,"small","dig.jpg",4,new AppUser());
-        assertEquals("should return size small","small",classUndertest.getSize());
+        Pet classUnderTest = new Pet("Demi", "dog", "border collie", "I am a good dog", 8, 4, "medium", "demi.jpg", new AppUser());
+
+        assertEquals("should return size medium","medium",classUnderTest.getSize());
     }
 
     @Test
     public void test_Pet_constructor_ImgUrl(){
-        Pet classUndertest = new Pet("Demi","Dog","Bc",4,"good dog",4,"small","dig.jpg",4,new AppUser());
-        assertEquals("should return img dig.jpg","dig.jpg",classUndertest.getImgUrl());
+        Pet classUnderTest = new Pet("Demi", "dog", "border collie", "I am a good dog", 8, 4, "medium", "demi.jpg", new AppUser());
+
+        assertEquals("should return img demi.jpg","demi.jpg",classUnderTest.getImgUrl());
     }
 
     @Test
     public void test_Pet_constructor_rating(){
-        Pet classUndertest = new Pet("Demi","Dog","Bc",4,"good dog",4,"small","dig.jpg",4,new AppUser());
-        assertEquals("should return rating",4,classUndertest.getRating());
+        Pet classUnderTest = new Pet("Demi", "dog", "border collie", "I am a good dog", 8, 4, "medium", "demi.jpg", new AppUser());
+        assertEquals("should return rating",5,classUnderTest.getRating());
     }
 
-
-    @Test
-    public void test_Request_login() throws Exception {
-        mockMvc.perform(get("/login")).andExpect(content().string(containsString("Log in")));
-    }
-    @Test
-    public void test_Request_redirects_home() throws Exception {
-        mockMvc.perform(get("/")).andExpect(content().string(containsString("Log in")));
-    }
+// These tests are currently on hold.
+//    @Test
+//    public void test_Request_login() throws Exception {
+//        mockMvc.perform(get("/login")).andExpect(content().string(containsString("Log in")));
+//    }
+//    @Test
+//    public void test_Request_redirects_home() throws Exception {
+//        mockMvc.perform(get("/")).andExpect(content().string(containsString("Log in")));
+//    }
 
     @Test
     public void test_Request_singup() throws Exception {
