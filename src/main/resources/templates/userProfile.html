@@ -38,6 +38,8 @@
         <p>Reviews By [[${target.username}]]:</p>
         <ul>
             <div class="container" th:each="review: ${target.reviewsListAuthored}">
+                <p th:text="${target.username} + ' said about ' + ${review.targetName} + ':'"></p>
+
                 <p th:text="${review.body} + ' ~ ' +  ${review.rating} + ' stars out of 5.'"></p>
             </div>
         </ul>

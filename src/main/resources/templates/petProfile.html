@@ -12,17 +12,17 @@
 <div>
     <ul>
         <li> <img th:src="@{${target.imgUrl}}"/></li>
-        <li> <span th:text="${target.name}"></span></li>
-        <li> <span th:text="${target.owner.username}"></span></li>
-        <li> <span th:text="${target.species}"></span></li>
-        <li> <span th:text="${target.breed}"></span></li>
-        <li> <span th:text="${target.age}"></span></li>
-        <li> <span th:text="${target.rating}"></span></li>
-        <li> <span th:text="${target.activity}"></span></li>
-        <li> <span th:text="${target.bio}"></span></li>
+        <p>Name: <span th:text="${target.name}"></span></p>
+        <p>Owner: <span th:text="${target.owner.username}"></span></p>
+        <p>Species: <span th:text="${target.species}"></span></p>
+        <p>Breed: <span th:text="${target.breed}"></span></p>
+        <p>Age: <span th:text="${target.age}"></span></p>
+        <p>Rating: <span th:text="${target.rating}"></span></p>
+        <p>Activity Level: <span th:text="${target.activity}"></span></p>
+        <p>Biography: <span th:text="${target.bio}"></span></p>
 
         <span th:if="${target.owner.username == principal.name}">
-            <li> <a th:href="@{'/delete/' + ${target.id}}">Delete</a> </li>
+            <a th:href="@{'/delete/' + ${target.id}}">Delete</a>
         </span>
 
     </ul>

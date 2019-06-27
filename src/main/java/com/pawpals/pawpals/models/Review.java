@@ -18,6 +18,8 @@ public abstract class Review {
     @ManyToOne
     AppUser author;
 
+    String targetName;
+
     public Review() {}
 
     public Review(int rating, String body, AppUser author) {
@@ -57,6 +59,10 @@ public abstract class Review {
 
     public void setAuthor(AppUser author) {
         this.author = author;
+    }
+
+    public String getTargetName() {
+        return targetName;
     }
 }
 

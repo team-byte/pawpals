@@ -10,6 +10,7 @@
     <div th:replace="fragment/HeaderFragment :: navigation">...</div>
 
     <div th:replace="fragment/UserFragment::userprofile"></div>
+    <a th:href="@{/updateprofile}">Update Profile</a>
     <div class="scheduler">
         <p>My Current Schedule</p>
     </div>
@@ -45,6 +46,7 @@
             </div>
 
             <div class="container" th:each="review: ${user.reviewsListAuthored}">
+                <p th:text="'You said about ' + ${review.targetName} + ':'"></p>
                 <p th:text="${review.body} + ' ~ ' +  ${review.rating} + ' stars out of 5.'"></p>
             </div>
         </ul>

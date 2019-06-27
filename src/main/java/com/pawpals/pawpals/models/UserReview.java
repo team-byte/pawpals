@@ -16,6 +16,7 @@ public class UserReview extends Review {
     public UserReview(int rating, String body, AppUser author, AppUser userReviewSubject) {
         super(rating, body, author);
         this.userReviewSubject = userReviewSubject;
+        this.targetName = userReviewSubject.firstName;
     }
 
     public AppUser getUserReviewSubject() {
