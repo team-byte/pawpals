@@ -27,22 +27,21 @@
     <div>
         <p>Reviews About [[${target.username}]]:</p>
         <ul>
-            <li th:each="review: ${target.reviewListAboutMe}">
-                <p th:text="${review.rating}"></p>
-                <p th:text="${review.body}"></p>
-                <p th:text="${review.author.username}"></p>
-            </li>
+            <div class="container" th:each="review: ${target.reviewListAboutMe}">
+                <p th:text="${review.author.firstName} + ' ' + ${review.author.lastName} + ' says:'"></p>
+                <p th:text="${review.body} + ' ~ ' +  ${review.rating} + ' stars out of 5.'"></p>
+            </div>
         </ul>
     </div>
 
     <div>
         <p>Reviews By [[${target.username}]]:</p>
         <ul>
-            <li th:each="review: ${target.reviewsListAuthored}">
-                <p th:text="${review.rating}"></p>
-                <p th:text="${review.body}"></p>
-                <p th:text="${review.author.username}"></p>
-            </li>
+            <div class="container" th:each="review: ${target.reviewsListAuthored}">
+                <p th:text="${target.username} + ' said about ' + ${review.targetName} + ':'"></p>
+
+                <p th:text="${review.body} + ' ~ ' +  ${review.rating} + ' stars out of 5.'"></p>
+            </div>
         </ul>
     </div>
 

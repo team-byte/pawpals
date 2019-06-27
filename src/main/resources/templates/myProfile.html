@@ -28,28 +28,27 @@
     </div>
     <div>
         <p>Reviews About Me:</p>
-        <div th:if="${#lists.isEmpty(user.reviewListAboutMe)}">
-            <p>No reviews about you. Go on play dates!</p>
-        </div>
         <ul>
-            <li th:each="review: ${user.reviewListAboutMe}">
-                <p th:text="${review.rating}"></p>
-                <p th:text="${review.body}"></p>
-                <p th:text="${review.author.username}"></p>
-            </li>
+            <div th:if="${#lists.isEmpty(user.reviewListAboutMe)}">
+                <p>No reviews about you. Go on play dates!</p>
+            </div>
+            <div class="container" th:each="review: ${user.reviewListAboutMe}">
+                <p th:text="${review.author.firstName} + ' ' + ${review.author.lastName} + ' says:'"></p>
+                <p th:text="${review.body} + ' ~ ' +  ${review.rating} + ' stars out of 5.'"></p>
+            </div>
         </ul>
     </div>
     <div>
-        <p>Reviews By You:</p>
-        <div th:if="${#lists.isEmpty(user.reviewsListAuthored)}">
-            <p>You haven't done any reviews!</p>
-        </div>
+        <p>Reviews You've Written:</p>
         <ul>
-            <li th:each="review: ${user.reviewsListAuthored}">
-                <p th:text="${review.rating}"></p>
-                <p th:text="${review.body}"></p>
-                <p th:text="${review.author.username}"></p>
-            </li>
+            <div th:if="${#lists.isEmpty(user.reviewsListAuthored)}">
+                <p>You haven't left any reviews!</p>
+            </div>
+
+            <div class="container" th:each="review: ${user.reviewsListAuthored}">
+                <p th:text="'You said about ' + ${review.targetName} + ':'"></p>
+                <p th:text="${review.body} + ' ~ ' +  ${review.rating} + ' stars out of 5.'"></p>
+            </div>
         </ul>
     </div>
 </body>
