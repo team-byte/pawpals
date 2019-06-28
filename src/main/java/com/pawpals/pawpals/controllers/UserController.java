@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.view.RedirectView;
-
 import java.security.Principal;
 import java.util.ArrayList;
 
@@ -30,11 +29,13 @@ public class UserController {
     @Autowired
     PasswordEncoder bCryptPasswordEncoder;
 
+    // Sign Up Page
     @GetMapping("/signup")
     public String getSignUp() {
         return "signup";
     }
 
+    // Adds New User
     @PostMapping("/createnewuser")
     public RedirectView createNewUser(@RequestParam String username,
                                       @RequestParam String firstName,
@@ -51,6 +52,7 @@ public class UserController {
         return new RedirectView("/myprofile");
     }
 
+    // Get Current Logged In User's Profile Page
     @GetMapping("/myprofile")
     public String myProfile(Principal p, Model m) {
         AppUser user = appUserRepository.findByUsername(p.getName());
@@ -60,6 +62,7 @@ public class UserController {
         return "myProfile";
     }
 
+    // Get List of All Users
     @GetMapping("/users")
     public String getUsers(Principal p, Model m) {
         Iterable<AppUser> usersIterable = appUserRepository.findAll();
@@ -73,6 +76,7 @@ public class UserController {
         return "usersList";
     }
 
+    // Get Individual User's Profile
     @GetMapping("/users/{id}")
     public String getUser(@PathVariable long id, Principal p, Model m) {
         AppUser user = appUserRepository.findById(id).get();
@@ -83,6 +87,7 @@ public class UserController {
         return "userProfile";
     }
 
+    // Get User Update Profile Page
     @GetMapping("/updateprofile")
     public String getUpdateProfile(Principal p, Model m) {
         AppUser user = appUserRepository.findByUsername(p.getName());
@@ -92,6 +97,7 @@ public class UserController {
         return "updateprofile";
     }
 
+    // Update User Profile
     @PostMapping("/updateprofile")
     public RedirectView updateProfile(@RequestParam String firstName,
                                       @RequestParam String lastName,

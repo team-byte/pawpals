@@ -58,6 +58,9 @@ public class AppUser implements UserDetails {
         rating = sum / reviewListAboutMe.size();
     }
 
+    /*
+        Setters and Getters Below
+     */
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;

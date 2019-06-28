@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss@1.0.0/build/base-min.css">
-<link rel="stylesheet" type="text/css" href="/css/style.css">
-<link rel="shortcut icon" type="image/x-icon" href="demi.ico" />
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss@1.0.0/build/base-min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="demi.ico" />
 <head>
     <meta charset="UTF-8">
     <title>Error</title>
 </head>
 <body>
-<h1 class="err">"You Broke The Internet Human" .</h1>
-<img src="images/Error.jpg" alt="Error" width="500px">
-<table id="errorMsg">
-    <tr><td>Path:</td>
-        <td th:text="${path}"/>
-    </tr>
-    <tr>
-        <td>Error:</td>
-        <td th:text="${error}"/>
-    </tr>
-    <tr>
-        <td>Status:</td>
-        <td th:text="${status}"/>
-    </tr>
-    <tr>
-        <td>Message:</td>
-        <td th:text="${message}"/>
-    </tr>
-</table>
-
+    <h1 class="err">"You Broke The Internet Human" .</h1>
+    <img src="images/Error.jpg" alt="Error" width="500px">
+    <table id="errorMsg">
+        <tr><td>Path:</td>
+            <td th:text="${path}"/>
+        </tr>
+        <tr>
+            <td>Error:</td>
+            <td th:text="${error}"/>
+        </tr>
+        <tr>
+            <td>Status:</td>
+            <td th:text="${status}"/>
+        </tr>
+        <tr>
+            <td>Message:</td>
+            <td th:text="${message}"/>
+        </tr>
+    </table>
 </body>
 </html>

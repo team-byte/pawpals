@@ -12,16 +12,19 @@ input[type="password"], input[type="text"] {
   transition: box-shadow 0.3s;
 
 }
+
 input[type="password"]:focus, input[type="text"]:focus {
   box-shadow: 0 0 4px 1px rgba(55, 166, 155, 0.3);
   outline: 0;
 }
+
 .show-password {
   display: block;
   height: 16px;
   margin: 26px 0 0 28px;
   width: 87px;
 }
+
 input[type="checkbox"] {
   cursor: pointer;
   height: 16px;
@@ -34,6 +37,7 @@ input[type="checkbox"]:checked {
   left: 29px;
   width: 58px;
 }
+
 .toggle {
   display: block;
   height: 16px;
@@ -41,6 +45,7 @@ input[type="checkbox"]:checked {
   width: 87px;
   z-index: -1;
 }
+
 input[type="checkbox"]:checked + .toggle { background-position: 0 -16px }
 .forgot {
   color: #7f7f7f;
@@ -53,7 +58,10 @@ input[type="checkbox"]:checked + .toggle { background-position: 0 -16px }
   top: 5px;
   transition: color .4s;
 }
-.forgot:hover { color: #3b3b3b }
+
+.forgot:hover {
+  color: #3b3b3b
+}
 
 input[type="submit"] {
   width:240px;
@@ -103,33 +111,40 @@ a:hover, a:active {
   background-color: red;
 }
 
-.nav ul li{
-background:#f44336;
-display:inline-block;}
-
-footer{
-background:#f44336;
-text-align:center;
+.nav ul li {
+  background:#f44336;
+  display:inline-block;
 }
 
-.sin{
-max-width:600px;
-margin:auto;
+footer {
+  background:#f44336;
+  text-align:center;
 }
 
-.nav{
-text-align:center;}
-
-.main1{
-text-align:center;
+.sin {
+  max-width:600px;
+  margin:auto;
 }
-li{
-list-style-type: none;}
 
-td{
-text-align:center;}
-.sf{
-diaplay:block;}
+.nav {
+  text-align:center;
+}
+
+.main1 {
+  text-align:center;
+}
+
+li {
+  list-style-type: none;
+}
+
+td {
+  text-align:center;
+}
+
+.sf {
+  diaplay:block;
+}
 
 input, select {
   width: 100%;
@@ -141,9 +156,9 @@ input, select {
   box-sizing: border-box;
 }
 
-.login{
-max-width:400px;
-margin:auto;
+.login {
+  max-width:400px;
+  margin:auto;
 }
 
 #errorMsg {
@@ -151,12 +166,12 @@ margin:auto;
     margin-left: auto;
     margin-right: auto;
 }
+
 img {
     border-radius: 9px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .loginBody {
@@ -166,13 +181,14 @@ img {
 }
 
 .singupbody{
-               background-image: url(../images/singup.png);
-               background-repeat: no-repeat;
-               background-size: 100%;
-           }
+  background-image: url(../images/singup.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
 
-.err{
-text-align:center}
+.err {
+  text-align:center;
+}
 
 .petlistitem {
   background-color: #f44336;
@@ -187,30 +203,28 @@ text-align:center}
 }
 
 
-.petbody{
- background-image: url(../images/pets2.jpg);
-               background-repeat: no-repeat;
-               background-size: 100%;
-
+.petbody {
+   background-image: url(../images/pets2.jpg);
+   background-repeat: no-repeat;
+   background-size: 100%;
 }
 
 header {
   background-color: #f44336;
-    margin: 0;
-    margin-bottom: 30px;
-    text-align: right;
-    vertical-align: middle;
-    padding-bottom: 15px;
+  margin: 0;
+  margin-bottom: 30px;
+  text-align: right;
+  vertical-align: middle;
+  padding-bottom: 15px;
 }
 
 .home {
-    float: left;
+  float: left;
 }
 
 header span {
-    margin-right: 30px;
+  margin-right: 30px;
 }
-
 
 .container {
   border: 2px solid #ccc;
@@ -225,50 +239,48 @@ header span {
 }
 
 .rating {
-    width: 45px;
+  width: 45px;
 }
 
-
 .createpetform {
-    max-width: 600px;
-    margin: 15px auto;
-    background-color: #eee;
-    opacity:0.9;
-    border-radius: 5px;
-    padding: 16px;
+  max-width: 600px;
+  margin: 15px auto;
+  background-color: #eee;
+  opacity:0.9;
+  border-radius: 5px;
+  padding: 16px;
 }
 
 #loginh1 {
-   font-size: 2em;
-    box-sizing: border-box;
-    color: #727678;
-    display: block;
-    height: 55px;
-    font: 'Open Sans', sans-serif;
-    padding-top: 30px;
-    margin: 0;
-    text-align: center;
-    margin-bottom: 20px;
+ font-size: 2em;
+  box-sizing: border-box;
+  color: #727678;
+  display: block;
+  height: 55px;
+  font: 'Open Sans', sans-serif;
+  padding-top: 30px;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 #signupBody {
-    background-image: url(../images/cat.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
+  background-image: url(../images/cat.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .sin h1 {
-    color: black;
-     -webkit-text-fill-color: white;
-     -webkit-text-stroke-width: 1px;
-     -webkit-text-stroke-color: black;
+  color: black;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 .petbody h1 {
-    text-align: center;
-    color: black;
-    -webkit-text-fill-color: white;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+  text-align: center;
+  color: black;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
-

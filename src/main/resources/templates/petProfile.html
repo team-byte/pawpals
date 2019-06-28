@@ -7,46 +7,42 @@
     <link rel="shortcut icon" type="image/x-icon" href="demi.ico" />
 </head>
 <body>
-<div th:replace="fragment/HeaderFragment :: navigation">...</div>
+    <div th:replace="fragment/HeaderFragment :: navigation">...</div>
+    <div>
+        <img th:src="@{${target.imgUrl}}" height="300px"/>
+        <div class="container">
+            <p>Name: <span th:text="${target.name}"></span></p>
+            <p>Owner: <br/>
+                <span th:if="${target.owner.username == principal.name}">
+                    <a th:href="@{'/myprofile'}"><span th:text="${target.owner.firstName} + ' ' + ${target.owner.lastName}"></span></a>
+                </span>
+                <span th:if="${target.owner.username != principal.name}">
+                    <a th:href="@{'/users/' + ${target.owner.id}}"><span th:text="${target.owner.firstName} + ' ' + ${target.owner.lastName}"></span></a>
+                </span>
+            </p>
+            <p>Species: <span th:text="${target.species}"></span></p>
+            <p>Breed: <span th:text="${target.breed}"></span></p>
+            <p>Age: <span th:text="${target.age}"></span></p>
+            <p>Rating: <span th:text="${target.rating}"></span></p>
+            <p>Activity Level: <span th:text="${target.activity}"></span></p>
+            <p>Biography: <span th:text="${target.bio}"></span></p>
 
-<div>
-    <img th:src="@{${target.imgUrl}}" height="300px"/>
-    <div class="container">
-        <p>Name: <span th:text="${target.name}"></span></p>
-        <p>Owner: <br/>
             <span th:if="${target.owner.username == principal.name}">
-                <a th:href="@{'/myprofile'}"><span th:text="${target.owner.firstName} + ' ' + ${target.owner.lastName}"></span></a>
+                <a th:href="@{'/delete/' + ${target.id}}">Delete</a>
             </span>
-            <span th:if="${target.owner.username != principal.name}">
-                <a th:href="@{'/users/' + ${target.owner.id}}"><span th:text="${target.owner.firstName} + ' ' + ${target.owner.lastName}"></span></a>
-            </span>
-        </p>
-        <p>Species: <span th:text="${target.species}"></span></p>
-        <p>Breed: <span th:text="${target.breed}"></span></p>
-        <p>Age: <span th:text="${target.age}"></span></p>
-        <p>Rating: <span th:text="${target.rating}"></span></p>
-        <p>Activity Level: <span th:text="${target.activity}"></span></p>
-        <p>Biography: <span th:text="${target.bio}"></span></p>
-
-        <span th:if="${target.owner.username == principal.name}">
-            <a th:href="@{'/delete/' + ${target.id}}">Delete</a>
-        </span>
-
-    </div>
-</div>
-
-<span th:if="${target.owner.username != principal.name}">
-    <div th:replace="fragment/ReviewFragment::addReview"></div>
-</span>
-
-<div>
-    <p>Reviews About [[${target.name}]]:</p>
-    <ul>
-        <div class="container" th:each="review: ${target.reviewListAboutMe}">
-            <p th:text="${review.author.firstName} + ' ' + ${review.author.lastName} + ' says:'"></p>
-            <p th:text="${review.body} + ' ~ ' +  ${review.rating} + ' stars out of 5.'"></p>
         </div>
-    </ul>
-</div>
+    </div>
+    <span th:if="${target.owner.username != principal.name}">
+        <div th:replace="fragment/ReviewFragment::addReview"></div>
+    </span>
+    <div>
+        <p>Reviews About [[${target.name}]]:</p>
+        <ul>
+            <div class="container" th:each="review: ${target.reviewListAboutMe}">
+                <p th:text="${review.author.firstName} + ' ' + ${review.author.lastName} + ' says:'"></p>
+                <p th:text="${review.body} + ' ~ ' +  ${review.rating} + ' stars out of 5.'"></p>
+            </div>
+        </ul>
+    </div>
 </body>
 </html>

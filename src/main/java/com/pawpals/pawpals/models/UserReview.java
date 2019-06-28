@@ -19,6 +19,9 @@ public class UserReview extends Review {
         this.targetName = userReviewSubject.firstName;
     }
 
+    /*
+        Getters and Setters Below
+    */
     public AppUser getUserReviewSubject() {
         return userReviewSubject;
     }

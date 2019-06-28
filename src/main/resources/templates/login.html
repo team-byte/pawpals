@@ -6,34 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Paw Pals</title>
     <link rel="shortcut icon" type="image/x-icon" href="demi.ico" />
-
 </head>
 <body class="loginBody">
-
 <h1 id="loginh1">Welcome to Paw Pals! Please log into your Pal Profile</h1>
-
-
 <div class="login">
-
         <div th:if="${p == null}" class="loginform">
-
-
             <form action="/login" method="POST">
                 <input placeholder="     Username" name="username" id="username" />
                 <input placeholder="Password" name="password" id="password" type="password"/>
                 <input style="margin:30px 80px" type="submit" value="Log In, Pal" />
             </form>
         </div>
-
         <div th:if="${p != null}" class="loginform">
             <h1>You're already logged in, <span th:text="${p.name}"></span></h1>
         </div>
-
         <div th:if="${p == null}" class="greeting">
             <p><a th:href="@{/signup}" >Not a PawPal? Sign up here!</a></p>
         </div>
         <div th:replace="fragment/SignUpFragment :: aboutus">...</div>
-
     </div>
 </body>
 </html>

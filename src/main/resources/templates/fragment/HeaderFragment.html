@@ -1,8 +1,6 @@
-<header class="navigation" th:fragment="navigation" xmlns:th="http://www.thymeleaf.org"
-        xmlns:sec="http://www.w3.org/1999/xhtml">
+<header class="navigation" th:fragment="navigation" xmlns:th="http://www.thymeleaf.org">
     <nav>
         <a class="home" href="/aboutpawpals">Paw Pals</a>
-
         <span class="nav-right">
             <a th:if="${p != null}" href="/users">View All Users</a>
             <a th:if="${p != null}" href="/pets">View All Pets</a>
