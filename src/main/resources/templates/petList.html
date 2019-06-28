@@ -10,11 +10,11 @@
 <body>
     <div th:replace="fragment/HeaderFragment :: navigation">...</div>
     <h1>List of all Paw Pals:</h1>
-        <span th:each="pet: ${pets}">
-            <a th:href="@{'/pets/' + ${pet.id}}">
-                <img th:src="${pet.imgUrl}" alt="petavatar" class="petavatar" height="300px" width="300px" />
-                <p th:text="${pet.name}"></p>
-            </a>
-        </span>
+    <span th:each="pet: ${pets}">
+        <a th:href="@{'/pets/' + ${pet.id}}">
+            <img th:src="${pet.imgUrl}" alt="petavatar" class="petavatar" height="300px" width="300px" />
+            <p th:text="${pet.name}"></p>
+        </a>
+    </span>
 </body>
 </html>

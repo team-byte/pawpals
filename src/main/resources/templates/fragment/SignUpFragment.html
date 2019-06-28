@@ -1,13 +1,12 @@
 <div th:fragment="aboutus" xmlns:th="http://www.thymeleaf.org">
-<div th:if="${p == null}" class="greeting">
-
-    <a href="/aboutpawpals">Learn More About PawPals</a>
-</div>
-<div th:if="${p != null}" class="greeting">
-    <a href="/aboutpawpals">Your PawPals Team</a>
-    <a href="/users">View All Users</a>
-    <a href="/pets">View All Pets</a>
-    <a href="/myprofile">Your Pal Profile</a>
-    <a href="/logout">Log out, Pal</a>
-</div>
+    <div th:if="${p == null}" class="greeting">
+        <a href="/aboutpawpals">Learn More About PawPals</a>
+    </div>
+    <div th:if="${p != null}" class="greeting">
+        <a href="/aboutpawpals">Your PawPals Team</a>
+        <a href="/users">View All Users</a>
+        <a href="/pets">View All Pets</a>
+        <a href="/myprofile">Your Pal Profile</a>
+        <a href="/logout">Log out, Pal</a>
+    </div>
 </div>

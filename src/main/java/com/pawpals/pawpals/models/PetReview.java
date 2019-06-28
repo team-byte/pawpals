@@ -19,6 +19,9 @@ public class PetReview extends Review {
         this.targetName = petReviewSubject.name;
     }
 
+    /*
+        Getters and Setters Below
+     */
     public Pet getPetReviewSubject() {
         return petReviewSubject;
     }

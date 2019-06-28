@@ -50,6 +50,10 @@ public class Pet {
         rating = sum / reviewListAboutMe.size();
     }
 
+    /*
+        Setters and Getters Below
+     */
+
     public long getId() {
         return id;
     }
@@ -136,16 +140,5 @@ public class Pet {
 
     public void setOwner(AppUser owner) {
         this.owner = owner;
-    }
-
-    public void addReview(Review review) {
-    }
-
-    public void removeReview(Review review) {
-
-    }
-
-    public int getAverage(Review review) {
-        return 0;
     }
 }

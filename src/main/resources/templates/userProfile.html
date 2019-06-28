@@ -9,7 +9,6 @@
 </head>
 <body>
     <div th:replace="fragment/HeaderFragment :: navigation">...</div>
-
     <div th:replace="fragment/UserFragment::userprofile"></div>
     <div class="userprofile">
         <h3>Pet List:</h3>
@@ -19,7 +18,6 @@
             </li>
         </ul>
     </div>
-
     <div class="userprofile">
         <h3>Reviews About [[${target.username}]]:</h3>
         <ul>
@@ -29,7 +27,6 @@
             </div>
         </ul>
     </div>
-
     <div class="userprofile">
         <h3>Reviews By [[${target.username}]]:</h3>
         <ul>
@@ -39,7 +36,6 @@
             </div>
         </ul>
     </div>
-
     <div th:replace="fragment/ReviewFragment::addReview"></div>
 </body>
 </html>

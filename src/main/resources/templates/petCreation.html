@@ -7,29 +7,29 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body class="petbody" >
-<div th:replace="fragment/HeaderFragment :: navigation">...</div>
-<h1>Add a Pet!</h1>
-<form action="/registernewpet" method="POST" class="createpetform">
-    <label for="species"><b>Species:</b></label>
-    <select  name="species" id="species" >
-        <option value="dog">Dog</option>
-        <option value="cat">Cat</option>
-        <option value="fish">Fish</option>
-        <option value="bird">Bird</option>
-    </select>
-    <label for="size"><b>Size:</b></label>
-    <select name="size" id="size" />
-        <option value="small">Small</option>
-        <option value="medium">Medium</option>
-        <option value="large">Large</option>
-    </select>
-    <input  placeholder="Pet's Name:" name="name" id="name" />
-    <input placeholder="Breed:" name="breed" id="breed" />
-    <input placeholder="Pet's Age:" name="age" id="age" type="number" />
-    <input placeholder="Activity level (from 1 to 5):" name="activity" id="activity" type="number" />
-    <input placeholder="Image URL:" name="imgUrl" id="imgUrl" />
-    <input name="bio" id="bio" placeholder="Describe your pet here!" />
-    <input type="submit" />
-</form>
+    <div th:replace="fragment/HeaderFragment :: navigation">...</div>
+    <h1>Add a Pet!</h1>
+    <form action="/registernewpet" method="POST" class="createpetform">
+        <label for="species"><b>Species:</b></label>
+        <select  name="species" id="species" >
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="fish">Fish</option>
+            <option value="bird">Bird</option>
+        </select>
+        <label for="size"><b>Size:</b></label>
+        <select name="size" id="size" />
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+        <input  placeholder="Pet's Name:" name="name" id="name" />
+        <input placeholder="Breed:" name="breed" id="breed" />
+        <input placeholder="Pet's Age:" name="age" id="age" type="number" />
+        <input placeholder="Activity level (from 1 to 5):" name="activity" id="activity" type="number" />
+        <input placeholder="Image URL:" name="imgUrl" id="imgUrl" />
+        <input name="bio" id="bio" placeholder="Describe your pet here!" />
+        <input type="submit" />
+    </form>
 </body>
 </html>

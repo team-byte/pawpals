@@ -7,11 +7,10 @@
     <link rel="shortcut icon" type="image/x-icon" href="demi.ico" />
 </head>
 <body>
-<div th:replace="fragment/HeaderFragment :: navigation">...</div>
-
+    <div th:replace="fragment/HeaderFragment :: navigation">...</div>
     <h1>List of all Paw Pal Users:</h1>
-        <span th:each="user: ${users}">
-            <a th:href="@{'/users/' + ${user.id}}"><img th:src="${user.imgUrl}" alt="useravatar" class="useravatar" height="400px" width="400px"/> <span th:text="${user.username}"></span></a>
-        </span>
+    <span th:each="user: ${users}">
+        <a th:href="@{'/users/' + ${user.id}}"><img th:src="${user.imgUrl}" alt="useravatar" class="useravatar" height="400px" width="400px"/> <span th:text="${user.username}"></span></a>
+    </span>
 </body>
 </html>

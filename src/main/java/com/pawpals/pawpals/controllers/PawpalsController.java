@@ -1,9 +1,7 @@
 package com.pawpals.pawpals.controllers;
 
-
 import com.pawpals.pawpals.models.AppUser;
 import com.pawpals.pawpals.models.AppUserRepository;
-import com.pawpals.pawpals.models.PetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,9 +13,7 @@ public class PawpalsController {
     @Autowired
     AppUserRepository appUserRepository;
 
-    @Autowired
-    PetRepository petRepository;
-
+    // Home and Default Page
     @GetMapping(value = {"/", "login"})
     public String getHome(Principal p, Model m) {
         if (p != null) {
@@ -28,6 +24,7 @@ public class PawpalsController {
         return "login";
     }
 
+    // About Us Page
     @GetMapping("/aboutpawpals")
     public String getAboutUs(Principal p, Model m) {
         m.addAttribute("p", p);

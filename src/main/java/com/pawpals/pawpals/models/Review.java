@@ -29,6 +29,9 @@ public abstract class Review {
         this.createdOn = new Timestamp(Calendar.getInstance().getTime().getTime());
     }
 
+    /*
+        Getters and Setters Below
+    */
     public long getId() {
         return id;
     }

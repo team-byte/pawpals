@@ -1,8 +1,6 @@
 <span th:fragment="addReview" xmlns:th="http://www.thymeleaf.org">
     <h3>Leave a Review:</h3>
-
     <form th:action="'/' + ${type} + '/' + ${target.id} + '/review'" method="POST">
-
         <label for="rating">Rating (from 1 to 5): </label>
         <select class="rating" name="rating" id="rating">
             <option value="1">1</option>
@@ -11,10 +9,8 @@
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
-
         <label for="body"></label><br/>
         <textarea name="body" id="body" placeholder="Write your review here..." rows="8" cols="80" maxlength="256" required></textarea>
-
         <input type="submit" />
     </form>
 </span>

@@ -26,8 +26,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class UserControllerTest {
 
-
-
     @Autowired
     UserController UserController;
 
@@ -149,5 +147,4 @@ public class UserControllerTest {
     public void test_Request_createnewuser() throws Exception {
         mockMvc.perform(get("/createnewuser")).andExpect(content().string(containsString("")));
     }
-
 }

@@ -9,22 +9,20 @@
     <title>Paw Pals Sign Up</title>
 </head>
 <body id="signupBody">
-<div th:replace="fragment/HeaderFragment :: navigation">...</div>
-
-
-<div class="sin">
-    <h1>Pawpals New User form</h1>
-    <form action="/createnewuser" method="POST">
-        <input placeholder="Username"name="username" id="username" />
-        <input placeholder="Password"name="password" id="password" />
-        <input placeholder="First Name" name="firstName" id="firstName" />
-        <input placeholder="LastName" name="lastName" id="lastName" />
-        <input placeholder="Phone Number - Use format 0123456789"name="phoneNumber" id="phoneNumber" type="tel" pattern="[0-9]{10}"/>
-        <input placeholder="Select Your Activity Level from 1-10:" type="number" name="activity" id="activity" />
-        <input placeholder="Image URL"name="imgUrl" id="imgUrl" />
-        <input placeholder="Bio"name="bio" id="bio" />
-        <input type="submit" />
-    </form>
-</div>
+    <div th:replace="fragment/HeaderFragment :: navigation">...</div>
+    <div class="sin">
+        <h1>Pawpals New User form</h1>
+        <form action="/createnewuser" method="POST">
+            <input placeholder="Username"name="username" id="username" />
+            <input placeholder="Password"name="password" id="password" />
+            <input placeholder="First Name" name="firstName" id="firstName" />
+            <input placeholder="LastName" name="lastName" id="lastName" />
+            <input placeholder="Phone Number - Use format 0123456789"name="phoneNumber" id="phoneNumber" type="tel" pattern="[0-9]{10}"/>
+            <input placeholder="Select Your Activity Level from 1-10:" type="number" name="activity" id="activity" />
+            <input placeholder="Image URL"name="imgUrl" id="imgUrl" />
+            <input placeholder="Bio"name="bio" id="bio" />
+            <input type="submit" />
+        </form>
+    </div>
 </body>
 </html>
