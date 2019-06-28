@@ -112,3 +112,8 @@ Once downloaded, change directory into the `pawpals` directory.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## AWS Deployed Site
+You can visit the deployed version of this site at [http://pawpals-env.zgv4yj2cpm.us-west-2.elasticbeanstalk.com/](http://pawpals-env.zgv4yj2cpm.us-west-2.elasticbeanstalk.com/).
+
+It was not a taught skill, but we registered a custom domain name, so you can also visit the site at [http://www.pawpals.online](http://www.pawpals.online)!
