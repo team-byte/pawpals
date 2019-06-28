@@ -96,19 +96,19 @@ Once downloaded, change directory into the `pawpals` directory.
     - build and run ```./gradlew bootRun```
 
 ### Screenshots
-![Login](./static/login.png)
+![Login](src/main/resources/static/login.png)
 
-![userForm](./static/userForm.png)
+![userForm](src/main/resources/static/userForm.png)
 
-![myprofile](./static/myprofile.png)
+![myprofile](src/main/resources/static/myprofile.png)
 
-![animalForm](./static/animalForm.png)
+![animalForm](src/main/resources/static/animalForm.png)
 
-![animalProfile](./static/animalProfile.png)
+![animalProfile](src/main/resources/static/animalProfile.png)
 
-![animalReviews](./static/animalReviews)
+![animalReviews](src/main/resources/static/animalReviews.png)
 
-![allusers](./static/allusers.png)
+![allusers](src/main/resources/static/allusers.png)
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
