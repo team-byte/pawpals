@@ -1,7 +1,7 @@
 ## Pawpals  
 **Version**: 1.1.0
 
-##Presentation Summary
+## Presentation Summary
 - PawPals Mission Statement
 - DevTeam Intros
 - PawPals Demo
@@ -9,7 +9,7 @@
 - Future Goals4
 - Q & A
 
-##Mission Statement
+## Mission Statement
 PawPawls helps animal lovers connect to socialize their new furry family members!
 
 Make a user profile for yourself, add your pets, and start meeting up with others at the dog park or neighborhood walking path!
@@ -18,7 +18,7 @@ Once you have found the perfect furry friend for your family member make sure to
 
 Version 1.2.0 will include PlayDate scheduling and mobile friendly views to review on the go.
 
-##Technology Used
+## Technology Used
 - [Java](https://go.java/index.html)
 - [AWS](https://aws.amazon.com/)([RDS](https://aws.amazon.com/rds/), [EC2](https://aws.amazon.com/ec2/))
 - [Gradle](https://docs.gradle.org/current/userguide/userguide.html)
