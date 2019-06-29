@@ -1,6 +1,11 @@
 ## Pawpals  
 **Version**: 1.1.0
 
+## AWS Deployed Site
+You can visit the deployed version of this site at [http://pawpals-env.zgv4yj2cpm.us-west-2.elasticbeanstalk.com/](http://pawpals-env.zgv4yj2cpm.us-west-2.elasticbeanstalk.com/).
+
+It was not a taught skill, but we registered a custom domain name, so you can also visit the site at [http://www.pawpals.online](http://www.pawpals.online)!
+
 ## Presentation Summary
 - PawPals Mission Statement
 - DevTeam Intros
@@ -96,24 +101,19 @@ Once downloaded, change directory into the `pawpals` directory.
     - build and run ```./gradlew bootRun```
 
 ### Screenshots
-![Login](src/main/resources/static/login.png)
+![Login](src/main/resources/Static/login.png)
 
-![userForm](src/main/resources/static/userForm.png)
+![userForm](src/main/resources/Static/userForm.png)
 
-![myprofile](src/main/resources/static/myprofile.png)
+![myprofile](src/main/resources/Static/myprofile.png)
 
-![animalForm](src/main/resources/static/animalForm.png)
+![animalForm](src/main/resources/Static/animalForm.png)
 
-![animalProfile](src/main/resources/static/animalProfile.png)
+![animalProfile](src/main/resources/Static/animalProfile.png)
 
-![animalReviews](src/main/resources/static/animalReviews.png)
+![animalReviews](src/main/resources/Static/animalReviews.png)
 
-![allusers](src/main/resources/static/allusers.png)
+![allusers](src/main/resources/Static/allusers.png)
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## AWS Deployed Site
-You can visit the deployed version of this site at [http://pawpals-env.zgv4yj2cpm.us-west-2.elasticbeanstalk.com/](http://pawpals-env.zgv4yj2cpm.us-west-2.elasticbeanstalk.com/).
-
-It was not a taught skill, but we registered a custom domain name, so you can also visit the site at [http://www.pawpals.online](http://www.pawpals.online)!
