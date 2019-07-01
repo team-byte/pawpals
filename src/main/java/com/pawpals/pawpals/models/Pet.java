@@ -23,9 +23,12 @@ public class Pet {
 
     @ManyToOne
     AppUser owner;
+    // would change this so two or more owners could be linked to a single pet.
 
     @OneToMany (mappedBy = "petReviewSubject")
     List<PetReview> reviewListAboutMe;
+
+    //one to many playdate list.
 
     public Pet() {}
 
