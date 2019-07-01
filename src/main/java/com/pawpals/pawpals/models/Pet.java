@@ -20,7 +20,13 @@ public class Pet {
     String size;
     String imgUrl;
     int rating;
-
+    //proposed changed to allow for multiple owners
+    //@ManytoMany
+    //Create a list of AppUsers
+    //List<AppUser> petOwners;
+    //another solution could be to add another field of "list of handlers" - walkers, spouse.  we could say owner is the legal owner
+    //those with associations could not review the animal they handle
+    //only OWNER can delete, no jaded ex-walkers killing the mood!
     @ManyToOne
     AppUser owner;
 
