@@ -18,6 +18,8 @@ public abstract class Review {
     @ManyToOne
     AppUser author;
 
+    // One to One Review playdate
+
     String targetName;
 
     public Review() {}

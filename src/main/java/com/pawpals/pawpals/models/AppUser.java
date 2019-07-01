@@ -34,6 +34,8 @@ public class AppUser implements UserDetails {
     @OneToMany (mappedBy = "author")
     List<Review> reviewsListAuthored;
 
+    // would put a One to many playdate list
+
     public AppUser() {}
 
     public AppUser(String username, String firstName, String lastName, String password, String phoneNumber, int activity, String bio, String imgUrl) {

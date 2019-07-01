@@ -2,7 +2,6 @@ package com.pawpals.pawpals.controllers;
 
 import com.pawpals.pawpals.models.AppUser;
 import com.pawpals.pawpals.models.AppUserRepository;
-import com.pawpals.pawpals.models.PetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -22,9 +21,6 @@ import java.util.ArrayList;
 public class UserController {
     @Autowired
     AppUserRepository appUserRepository;
-
-    @Autowired
-    PetRepository petRepository;
 
     @Autowired
     PasswordEncoder bCryptPasswordEncoder;
@@ -65,12 +61,7 @@ public class UserController {
     // Get List of All Users
     @GetMapping("/users")
     public String getUsers(Principal p, Model m) {
-        Iterable<AppUser> usersIterable = appUserRepository.findAll();
-        ArrayList<AppUser> users = new ArrayList<>();
-        for (AppUser user: usersIterable) {
-            if (!user.equals(appUserRepository.findByUsername(p.getName())))
-                users.add(user);
-        }
+        ArrayList<AppUser> users = (ArrayList<AppUser>) appUserRepository.findAll();
         m.addAttribute("users", users);
         m.addAttribute("p", p);
         return "usersList";
