@@ -14,7 +14,7 @@ public class PawpalsController {
     AppUserRepository appUserRepository;
 
     // Home and Default Page
-    @GetMapping(value = {"/", "login"})
+    @GetMapping(value = {"/", "/login"})
     public String getHome(Principal p, Model m) {
         if (p != null) {
             AppUser user = appUserRepository.findByUsername(p.getName());
