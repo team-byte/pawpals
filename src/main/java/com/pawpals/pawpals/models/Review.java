@@ -8,6 +8,7 @@ import java.util.Calendar;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "type")
+// Does removing abstract break the code?
 public abstract class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

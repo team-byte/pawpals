@@ -22,7 +22,7 @@ public class PawpalsController {
         }
         m.addAttribute("p", p);
         return "login";
-    }
+}
 
     // About Us Page
     @GetMapping("/aboutpawpals")
